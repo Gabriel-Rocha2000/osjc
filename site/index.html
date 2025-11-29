@@ -3,10 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Início - Obras Sociais do Centro Espírita Fraternidade Jerônimo Candinho</title>
+    <title>Obras Sociais do Centro Espírita Fraternidade Jerônimo Candinho</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <!-- Elementos decorativos verdes -->
+    <div class="decorative-green-right"></div>
+    <div class="decorative-green-bottom"></div>
+    
     <!-- Botão hambúrguer para abrir drawer (mobile) -->
     <button class="drawer-toggle" id="drawerToggle" aria-label="Abrir menu">
         <span></span>
@@ -20,69 +24,231 @@
                 <div class="logo-circle">
                     <img src="LOGO-JERONIMO-NEW-1-90x90.png" alt="Logo Jerônimo Candinho" />
                 </div>
-                <h1 class="site-title"><a href="index.html">Obras Sociais do Centro Espírita Fraternidade Jerônimo Candinho</a></h1>
+                
             </div>
             <nav class="main-nav">
                 <ul>
-                    <li><a href="index.html">Início</a></li>
-                    <li><a href="pages.html">Quem somos</a></li>
-                    <li><a href="posts.html">O que fazemos</a></li>
-                    <li><a href="pages.html">Compliance</a></li>
-                    <li><a href="pages.html">Contato</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="pages.html">Quem Somos</a></li>
+                    <li><a href="posts.html">Programas</a></li>
+                    <li><a href="pages.html">Vagas</a></li>
                     <li><a href="posts.html">Blog</a></li>
+                    <li><a href="pages.html">Transparência</a></li>
+                    <li><a href="pages.html">Contato</a></li>
                 </ul>
             </nav>
             <div class="header-right">
-                <a href="index.html" class="donate-button">Doe Aqui</a>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/jeronimocandinho.osjc?igsh=NHlmb3NxN2p0ODh1" target="_blank" rel="noopener" aria-label="Instagram" class="social-icon">
+                        <img src="./assets/instagram-icon.svg" alt="Instagram" class="social-icon-img" />
+                    </a>
+                    <a href="https://www.facebook.com" target="_blank" rel="noopener" aria-label="Facebook" class="social-icon">
+                        <img src="./assets/facebook-icon.svg" alt="Instagram" class="social-icon-img" />
+                    </a>
+                    <a href="https://www.youtube.com" target="_blank" rel="noopener" aria-label="YouTube" class="social-icon">▶️</a>
+                </div>
+                <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema">
+                    <span class="theme-icon">🌙</span>
+                </button>
+                <a href="index.html" class="donate-button">Doe aqui</a>
             </div>
         </div>
     </header>
     
     <main class="main-content">
+        <!-- 1. BANNER -->
         <section class="hero">
             <div class="hero-left">
                 <div class="hero-left-content">
-                    <h1>Transformando Vidas com Amor e Educação</h1>
-                    <p class="hero-subtitle">Bem-vindo às Obras Sociais do Centro Espírita Fraternidade Jerônimo Candinho. Um espaço de acolhimento, aprendizado e transformação social.</p>
-                    <a href="posts.html" class="hero-button">Conheça Nossos Projetos</a>
+                    <h1>Educando para a vida</h1>
+                    <p class="hero-subtitle">Existem várias maneiras de colaborar com nossos programas assistenciais, seja doando recursos materiais, financeiros ou se tornando um voluntário.</p>
+                    <a href="posts.html" class="hero-button">Conheça mais</a>
+                    <div class="hero-features">
+                        <div class="hero-feature-item">
+                            <span class="checkmark">✓</span>
+                            <span>Fortaleça</span>
+                        </div>
+                        <div class="hero-feature-item">
+                            <span class="checkmark">✓</span>
+                            <span>Impacte</span>
+                        </div>
+                        <div class="hero-feature-item">
+                            <span class="checkmark">✓</span>
+                            <span>Transforme</span>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <            <div class="hero-right">
-                <div class="hero-image-placeholder">
-                    <img src="hero-poster.jpg" alt="Obras Sociais Jerônimo Candinho - Junte-se a esse projeto do bem!" />
+            <div class="hero-right">
+                <div class="hero-carousel">
+                    <div class="hero-carousel-track">
+                        <div class="hero-carousel-slide active">
+                            <img src="hero-poster.jpg" alt="Crianças beneficiadas" />
+                        </div>
+                        <div class="hero-carousel-slide">
+                            <img src="hero-poster.jpg" alt="Jovem beneficiado" />
+                        </div>
+                        <div class="hero-carousel-slide">
+                            <img src="hero-poster.jpg" alt="Criança beneficiada" />
+                        </div>
+                        <div class="hero-carousel-slide">
+                            <img src="hero-poster.jpg" alt="Criança beneficiada" />
+                        </div>
+                    </div>
+                    <button class="hero-nav-arrow hero-nav-prev" aria-label="Anterior">‹</button>
+                    <button class="hero-nav-arrow hero-nav-next" aria-label="Próximo">›</button>
+                    <div class="hero-carousel-dots">
+                        <span class="carousel-dot active" data-slide="0"></span>
+                        <span class="carousel-dot" data-slide="1"></span>
+                        <span class="carousel-dot" data-slide="2"></span>
+                        <span class="carousel-dot" data-slide="3"></span>
+                    </div>
                 </div>
             </div>
         </section>
         
+        <!-- 2. DEPOIMENTOS -->
+        <section class="testimonials-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Ouça nossos apoiadores</span>
+                    <h2>Vozes de impacto compartilham histórias!</h2>
+                </div>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">"Olá, boa tarde! Me chamo Raimundo Alves, sou empresário no ramo de confecção há 4 anos. Estou fazendo o módulo de Modelagem na Osceia, por indicação de uma modelista que trabalha comigo há bastante tempo. Estou gostando muito do curso, já conheci pessoas com quem estou começando a trabalhar e pretendo fazer outros cursos para me especializar ainda mais. Agradeço à Osceia por esta oportunidade, que tem aberto portas para muita gente. Estou achando tudo muito bom!"</p>
+                        <div class="testimonial-author">
+                            <strong>Raimundo Alvez</strong>
+                            <span>Modelagem</span>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">"Estou aqui há um ano, graças à minha tia, que já participava e nos apresentou à Maura. Eu e minha irmã temos alguns problemas de saúde, como artrose e artrite, e depois de aposentadas, ficamos muito sozinhas. Estar aqui tem sido ótimo, porque podemos conviver com outras pessoas, compartilhar, trocar ideias. A Maura traz isso pra gente. O grupo é maravilhoso — fazemos orações e exercícios juntos, o que ajuda muito na mente e no corpo. Só temos a agradecer. Muito obrigada!"</p>
+                        <div class="testimonial-author">
+                            <strong>Orlany</strong>
+                            <span>Programa Alvorecer</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonials-cta">
+                    <a href="#" class="btn-secondary">Mostrar mais depoimentos</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. NÚMEROS -->
         <section class="stats-section">
             <div class="container">
                 <div class="stats-container">
                     <div class="stat-item">
-                        <div class="stat-number">+60</div>
-                        <div class="stat-label">Alunos na Escola</div>
+                        <div class="stat-number">0</div>
+                        <div class="stat-label">Títulos de premiações</div>
                     </div>
                     <div class="stat-item">
-                        <div class="stat-number">+150</div>
-                        <div class="stat-label">Enxovais Doados em 2024</div>
+                        <div class="stat-number">0</div>
+                        <div class="stat-label">Projetos Ativos</div>
                     </div>
                     <div class="stat-item">
-                        <div class="stat-number">+549</div>
-                        <div class="stat-label">Jovem Candango 2024</div>
+                        <div class="stat-number">0 +</div>
+                        <div class="stat-label">Atendimentos diários</div>
                     </div>
-                    <div class="stats-cta">
-                        <a href="pages/todas/contato.html" class="contact-button">Fale Conosco</a>
-                        <a href="https://wa.me/5561999999999" class="whatsapp-icon" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
+                    <div class="stat-item">
+                        <div class="stat-number">0 +</div>
+                        <div class="stat-label">Empregos direcionados</div>
                     </div>
                 </div>
             </div>
         </section>
-        
-        <section class="recent-posts-cta">
+
+        <!-- 4. PROGRAMAS -->
+        <section class="programs-section">
             <div class="container">
-                <div class="recent-posts-cta-content">
-                    <h2>Últimas Notícias e Atividades</h2>
-                    <p>Fique por dentro das nossas atividades, projetos e eventos mais recentes.</p>
-                    <a href="ultimas-noticias.html" class="hero-button">Ver Todas as Notícias</a>
+                <div class="programs-grid">
+                    <div class="program-card">
+                        <span class="program-tag">Programa</span>
+                        <h3>Jovem Aprendiz</h3>
+                        <p>O programa jovem aprendiz encaminha aprendizes na faixa etária de 14 a 24 anos incompletos, devidamente contratados e/ou matriculados para a realização de aprendizado prático nas empresas parceiras</p>
+                        <a href="posts.html" class="program-link">Conheça o Programa</a>
+                    </div>
+                    <div class="program-card">
+                        <span class="program-tag">Programa</span>
+                        <h3>Osceia Inclusão</h3>
+                        <p>Nosso propósito é promover os apoios necessários às pessoas com deficiência para o reconhecimento e fortalecimento de suas potencialidades e habilidades na integração ao mundo do trabalho.</p>
+                        <a href="posts.html" class="program-link">Conheça o programa</a>
+                    </div>
+                    <div class="program-card">
+                        <span class="program-tag">Programa</span>
+                        <h3>Qualificação Profissional</h3>
+                        <p>A Osceia, em parceria com o Senai, oferece curso de Costura Industrial, com o objetivo principal de promover qualificação profissional e gerar oportunidades de trabalho para os interessados no curso.</p>
+                        <a href="posts.html" class="program-link">Conheça o programa</a>
+                    </div>
+                    <div class="program-card program-card-large">
+                        <span class="program-tag">Programa</span>
+                        <h3>Educandário Espírita Eurípedes Barsanulfo</h3>
+                        <p>O Educandário Espírita Eurípedes Barsanulfo é uma escola confessional, gratuita, que atende em média 300 alunos…</p>
+                        <a href="posts.html" class="program-link">Conheça o programa</a>
+                    </div>
+                </div>
+                <div class="programs-cta">
+                    <a href="posts.html" class="btn-secondary">Mostrar mais programas</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. FEED -->
+        <section class="news-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Histórias comoventes e acontecimentos emocionantes</span>
+                    <h2>Fique atualizado com as últimas novidades da Osceia</h2>
+                </div>
+                <div class="news-grid">
+                    <article class="news-card">
+                        <h3>Natal com Jesus: O Grupo Alvorecer e a Arte do Bem</h3>
+                        <span class="news-date">25 de novembro de 2025</span>
+                        <p>O Grupo Alvorecer iniciou a confecção de bonequinhas de pano para doar às crianças atendidas pela instituição neste Natal, espalhando amor e esperança por meio...</p>
+                        <a href="ultimas-noticias.html" class="news-link">Ler mais →</a>
+                    </article>
+                    <article class="news-card">
+                        <h3>Dia da Consciência Negra: Luta e Igualdade</h3>
+                        <span class="news-date">20 de novembro de 2025</span>
+                        <p>Hoje, lembramos Zumbi dos Palmares e a luta contra a escravidão. A Osceia promove a inclusão social, trabalhando por um futuro mais justo e igualitário....</p>
+                        <a href="ultimas-noticias.html" class="news-link">Ler mais →</a>
+                    </article>
+                    <article class="news-card">
+                        <h3>Campanha Natal com Jesus: Doe e Espalhe Esperança</h3>
+                        <span class="news-date">17 de novembro de 2025</span>
+                        <p>A Osceia promove a Campanha Natal com Jesus, com doações até 12/12....</p>
+                        <a href="ultimas-noticias.html" class="news-link">Ler mais →</a>
+                    </article>
+                </div>
+                <div class="news-cta">
+                    <a href="ultimas-noticias.html" class="btn-secondary">Mostrar mais notícias</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. SELOS -->
+        <section class="badges-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Certificações e reconhecimentos</span>
+                    <h2>Nossos Selos e Certificações</h2>
+                </div>
+                <p class="badges-description">Reconhecimentos que atestam nosso compromisso com a transparência, qualidade e impacto social.</p>
+                <div class="badges-grid">
+                    <div class="badge-item">
+                        <img src="assets/selo-doar.png" alt="Selo Doar" class="badge-image" />
+                        <p class="badge-label">Certificação</p>
+                    </div>
+                    <div class="badge-item">
+                        <img src="assets/selo-phomenta.png" alt="Selo Phomenta" class="badge-image" />
+                        <p class="badge-label">Reconhecimento</p>
+                    </div>
+                    <div class="badge-item">
+                        <img src="assets/Selo-Empresa-Amiga-da-Juventude-JPEG.jpeg.jpg" alt="Selo Empresa Amiga da Juventude" class="badge-image" />
+                        <p class="badge-label">Premiação</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -90,7 +256,80 @@
     
     <footer class="site-footer">
         <div class="container">
-            <p>&copy; 2025 Obras Sociais do Centro Espírita Fraternidade Jerônimo Candinho. Todos os direitos reservados.</p>
+            <div class="footer-content">
+                <div class="footer-section footer-about">
+                    <h4>Obras Sociais do Centro Espírita Fraternidade Jerônimo Candinho</h4>
+                    <p>Fundada por um grupo de voluntários em 04/05/1984. Tem sua sede no Jardim Nova Esperança e extensão no Jardim Liberdade – Goiânia-GO.</p>
+                    <p class="footer-cnpj"><strong>CNPJ:</strong> 25.006.149/0001-09</p>
+                </div>
+                
+                <div class="footer-section footer-nav">
+                    <h4>Navegação</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="pages.html">Quem Somos</a></li>
+                        <li><a href="posts.html">Programas e Projetos</a></li>
+                        <li><a href="pages.html">Vagas</a></li>
+                        <li><a href="posts.html">Blog</a></li>
+                        <li><a href="pages.html">Transparência</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section footer-programs">
+                    <h4>Programas</h4>
+                    <ul class="footer-links">
+                        <li><a href="posts.html">Osceia Inclusão</a></li>
+                        <li><a href="posts.html">Florescer</a></li>
+                        <li><a href="posts.html">Educandário Espírita</a></li>
+                        <li><a href="posts.html">Jovem Aprendiz</a></li>
+                        <li><a href="posts.html">Planeje Estágio</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section footer-contact">
+                    <h4>Contato</h4>
+                    <div class="contact-info">
+                        <p class="contact-item">
+                            <span class="contact-icon">📍</span>
+                            <span>Jardim Nova Esperança<br>Goiânia - GO</span>
+                        </p>
+                        <p class="contact-item">
+                            <span class="contact-icon">📞</span>
+                            <span>(62) 0000-0000</span>
+                        </p>
+                        <p class="contact-item">
+                            <span class="contact-icon">✉️</span>
+                            <span>contato@osjc.org.br</span>
+                        </p>
+                        <p class="contact-item">
+                            <span class="contact-icon">🕒</span>
+                            <span>Segunda a Sexta<br>8h às 17h</span>
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="footer-section footer-social">
+                    <h4>Redes Sociais</h4>
+                    <div class="footer-social-icons">
+                        <a href="https://www.instagram.com/jeronimocandinho.osjc?igsh=NHlmb3NxN2p0ODh1" target="_blank" rel="noopener" aria-label="Instagram" class="footer-social-link">
+                            <span class="social-icon-text">Instagram</span>
+                        </a>
+                        <a href="https://www.facebook.com" target="_blank" rel="noopener" aria-label="Facebook" class="footer-social-link">
+                            <span class="social-icon-text">Facebook</span>
+                        </a>
+                        <a href="https://www.youtube.com" target="_blank" rel="noopener" aria-label="YouTube" class="footer-social-link">
+                            <span class="social-icon-text">YouTube</span>
+                        </a>
+                        <a href="https://wa.me/5561981691123" target="_blank" rel="noopener" aria-label="WhatsApp" class="footer-social-link">
+                            <span class="social-icon-text">WhatsApp</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; Copyright 2025 – <strong>Obras Sociais do Centro Espírita Fraternidade Jerônimo Candinho</strong> – Todos os direitos reservados</p>
+            </div>
         </div>
     </footer>
     

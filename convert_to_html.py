@@ -317,7 +317,7 @@ class WordPressConverter:
             <div class="container">
                 <h1>Últimas Notícias e Atividades</h1>
                 <p class="section-intro">Fique por dentro das nossas atividades, projetos e eventos mais recentes.</p>
-                {posts_html if posts_html else '<p>Nenhum post encontrado.</p>'}
+            {posts_html if posts_html else '<p>Nenhum post encontrado.</p>'}
             </div>
         </section>
         """
