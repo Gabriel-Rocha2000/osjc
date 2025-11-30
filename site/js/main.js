@@ -159,6 +159,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Toggle Dark/Light Mode
     initThemeToggle();
     
+    // Inicializa modal de imagem
+    initImageModal();
+    
     console.log('Site carregado com sucesso!');
 });
 
@@ -282,4 +285,48 @@ function initHeroCarousel() {
     
     // Inicia autoplay
     startAutoplay();
+}
+
+// Função para inicializar o modal de imagem
+function initImageModal() {
+    const modal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('modalImage');
+    const closeBtn = document.querySelector('.image-modal-close');
+    const carouselImages = document.querySelectorAll('.hero-carousel-image');
+    
+    if (!modal || !modalImg) return;
+    
+    // Abre o modal ao clicar nas imagens do carrossel
+    carouselImages.forEach(img => {
+        img.addEventListener('click', function() {
+            modal.style.display = 'block';
+            modalImg.src = this.src;
+            modalImg.alt = this.alt;
+            document.body.style.overflow = 'hidden'; // Previne scroll do body
+        });
+    });
+    
+    // Fecha o modal ao clicar no X
+    if (closeBtn) {
+        closeBtn.addEventListener('click', function() {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto'; // Restaura scroll do body
+        });
+    }
+    
+    // Fecha o modal ao clicar fora da imagem
+    modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+    });
+    
+    // Fecha o modal com a tecla ESC
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && modal.style.display === 'block') {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+    });
 }
