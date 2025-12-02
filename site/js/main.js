@@ -162,8 +162,132 @@ document.addEventListener('DOMContentLoaded', function() {
     // Inicializa modal de imagem
     initImageModal();
     
+    // Inicializa drawers do menu
+    initNavDrawers();
+    
     console.log('Site carregado com sucesso!');
 });
+
+// Função para inicializar drawers do menu
+function initNavDrawers() {
+    // Conteúdo dos drawers por item do menu
+    const drawerContent = {
+        'Quem Somos': {
+            links: [
+                { text: 'História', href: 'quem-somos.html' },
+                { text: 'Missão, Visão e Valores', href: '#missao-visao-valores' },
+                { text: 'Sobre nós', href: 'pages.html' },
+                { text: 'Quem é quem', href: 'pages.html' }
+            ]
+        },
+        'Programas': {
+            links: [
+                { text: 'O que fazemos', href: 'posts.html' },
+                { text: 'Projetos', href: 'posts.html' }
+            ]
+        },
+        'Vagas': {
+            links: [
+                { text: 'Vagas no Colégio Allan Kardec', href: 'pages.html' },
+                { text: 'Programas Jovem Aprendiz', href: 'posts.html' },
+                { text: 'Jovem Candango', href: 'posts.html' }
+            ]
+        }
+    };
+    
+    const navLinks = document.querySelectorAll('.main-nav .nav-link');
+    
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            const linkText = this.textContent.trim();
+            
+            // Verifica se este item tem drawer
+            const hasDrawer = drawerContent[linkText];
+            
+            if (hasDrawer) {
+                // Previne navegação para abrir o drawer
+                e.preventDefault();
+                
+                // Remove drawers abertos de outros links
+                document.querySelectorAll('.nav-drawer').forEach(drawer => {
+                    if (drawer !== this.nextElementSibling) {
+                        drawer.classList.remove('active');
+                    }
+                });
+                
+                // Cria ou mostra drawer abaixo do link
+                let drawer = this.nextElementSibling;
+                
+                if (!drawer || !drawer.classList.contains('nav-drawer')) {
+                    drawer = document.createElement('div');
+                    drawer.className = 'nav-drawer';
+                    
+                    // Cria o conteúdo do drawer
+                    let linksHTML = '';
+                    hasDrawer.links.forEach(linkItem => {
+                        linksHTML += `<a href="${linkItem.href}" class="nav-drawer-link">${linkItem.text}</a>`;
+                    });
+                    
+                    drawer.innerHTML = `
+                        <button class="nav-drawer-close" aria-label="Fechar">←</button>
+                        <div class="nav-drawer-content">
+                            ${linksHTML}
+                        </div>
+                    `;
+                    this.parentElement.appendChild(drawer);
+                    
+                    // Adiciona evento ao botão de fechar
+                    const closeBtn = drawer.querySelector('.nav-drawer-close');
+                    if (closeBtn) {
+                        closeBtn.addEventListener('click', function(e) {
+                            e.stopPropagation();
+                            drawer.classList.remove('active');
+                            document.body.style.overflow = 'auto';
+                        });
+                    }
+                }
+                
+                // Bloqueia scroll do body quando drawer está aberto em mobile
+                if (window.innerWidth <= 760) {
+                    if (drawer.classList.contains('active')) {
+                        document.body.style.overflow = 'hidden';
+                    } else {
+                        document.body.style.overflow = 'auto';
+                    }
+                }
+                
+                // Alterna o drawer
+                drawer.classList.toggle('active');
+            } else {
+                // Se não tem drawer, permite navegação normal
+                // Não previne o comportamento padrão
+            }
+        });
+    });
+    
+    // Fecha drawers ao clicar fora
+    document.addEventListener('click', function(e) {
+        if (!e.target.closest('.main-nav li') && !e.target.closest('.nav-drawer-close')) {
+            document.querySelectorAll('.nav-drawer').forEach(drawer => {
+                drawer.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            });
+        }
+    });
+    
+    // Fecha drawer ao clicar em um link dentro dele (em mobile)
+    document.addEventListener('click', function(e) {
+        if (e.target.classList.contains('nav-drawer-link') && window.innerWidth <= 760) {
+            setTimeout(() => {
+                document.querySelectorAll('.nav-drawer').forEach(drawer => {
+                    drawer.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                });
+            }, 300);
+        }
+    });
+}
 
 // Função para inicializar o toggle de tema
 function initThemeToggle() {

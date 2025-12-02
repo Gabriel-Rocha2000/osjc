@@ -82,3 +82,4 @@ Se você tiver um servidor backend, pode criar um proxy que busca as imagens do 
 
 Basta baixar as 6 imagens mais recentes do Instagram e atualizar os nomes dos arquivos no HTML!
 
+

@@ -66,3 +66,4 @@ Para atualizar o feed, basta:
 3. Substituir no arquivo `index.html` nas tags `<img src="...">`
 4. Atualizar também os links `<a href="...">` com os links completos dos posts
 
+
