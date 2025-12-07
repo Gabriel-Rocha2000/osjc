@@ -453,4 +453,72 @@ function initImageModal() {
             document.body.style.overflow = 'auto';
         }
     });
+    
+    // Newsletter Form
+    const newsletterForm = document.getElementById('newsletterForm');
+    const newsletterEmail = document.getElementById('newsletterEmail');
+    const newsletterMessage = document.getElementById('newsletterMessage');
+    
+    if (newsletterForm) {
+        newsletterForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const email = newsletterEmail.value.trim();
+            
+            if (!email) {
+                showNewsletterMessage('Por favor, insira um email válido.', 'error');
+                return;
+            }
+            
+            if (!isValidEmail(email)) {
+                showNewsletterMessage('Por favor, insira um email válido.', 'error');
+                return;
+            }
+            
+            // Aqui você pode integrar com um serviço de newsletter (Mailchimp, SendGrid, etc.)
+            // Por enquanto, apenas mostra mensagem de sucesso
+            showNewsletterMessage('Obrigado! Você foi inscrito na nossa newsletter.', 'success');
+            newsletterEmail.value = '';
+            
+            // Exemplo de integração (descomente e configure conforme necessário):
+            /*
+            fetch('/api/newsletter', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ email: email })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    showNewsletterMessage('Obrigado! Você foi inscrito na nossa newsletter.', 'success');
+                    newsletterEmail.value = '';
+                } else {
+                    showNewsletterMessage('Erro ao inscrever. Tente novamente.', 'error');
+                }
+            })
+            .catch(error => {
+                showNewsletterMessage('Erro ao inscrever. Tente novamente.', 'error');
+            });
+            */
+        });
+    }
+    
+    function showNewsletterMessage(message, type) {
+        if (newsletterMessage) {
+            newsletterMessage.textContent = message;
+            newsletterMessage.className = 'newsletter-message ' + type;
+            
+            setTimeout(() => {
+                newsletterMessage.textContent = '';
+                newsletterMessage.className = 'newsletter-message';
+            }, 5000);
+        }
+    }
+    
+    function isValidEmail(email) {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+    }
 }

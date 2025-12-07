@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doe Aqui - Obras Sociais do Centro Espírita Fraternidade Jerônimo Candinho</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/doe-aqui.css">
+</head>
+<body>
+    <!-- Elementos decorativos verdes -->
+    <div class="decorative-green-right"></div>
+    <div class="decorative-green-bottom"></div>
+    
+    <!-- Botão hambúrguer para abrir drawer (mobile) -->
+    <button class="drawer-toggle" id="drawerToggle" aria-label="Abrir menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+    
+    <header class="site-header" id="siteHeader">
+        <div class="container">
+            <div class="header-top">
+                <div class="header-left">
+                    <div class="logo-circle">
+                        <img src="LOGO-JERONIMO-NEW-1-90x90.png" alt="Logo Jerônimo Candinho" />
+                    </div>
+                    <h1 class="site-title"><a href="index.html">Obras Sociais CEF <br> Jerônimo Candinho</a></h1>
+                </div>
+            </div>
+            <div class="header-bottom">
+                <nav class="main-nav">
+                    <ul>
+                        <li>
+                            <a href="index.html" class="nav-link">Home</a>
+                        </li>
+                        <li>
+                            <a href="quem-somos.html" class="nav-link">Quem Somos</a>
+                        </li>
+                        <li>
+                            <a href="posts.html" class="nav-link">Programas</a>
+                        </li>
+                        <li>
+                            <a href="pages.html" class="nav-link">Vagas</a>
+                        </li>
+                        <li>
+                            <a href="posts.html" class="nav-link">Blog</a>
+                        </li>
+                        <li>
+                            <a href="pages.html" class="nav-link">Transparência</a>
+                        </li>
+                        <li>
+                            <a href="pages.html" class="nav-link">Materiais</a>
+                        </li>
+                        <li>
+                            <a href="pages.html" class="nav-link">Contato</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="header-actions">
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/jeronimocandinho.osjc?igsh=NHlmb3NxN2p0ODh1" target="_blank" rel="noopener" aria-label="Instagram" class="social-icon">
+                            <img src="./assets/instagram-icon.svg" alt="Instagram" class="social-icon-img" />
+                        </a>
+                        <a href="https://www.facebook.com" target="_blank" rel="noopener" aria-label="Facebook" class="social-icon">
+                            <img src="./assets/facebook-icon.svg" alt="Instagram" class="social-icon-img" />
+                        </a>
+                        <a href="hhttps://youtube.com" target="_blank" rel="noopener" aria-label="YouTube" class="social-icon">
+                            <img src="./youtube-123.svg" alt="Instagram" class="social-icon-img" />
+                        </a>
+                    </div>
+                    <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema">
+                        <span class="theme-icon">🌙</span>
+                    </button>
+                    <a href="doe-aqui.html" class="donate-button"><img src="./heart-icon.png" alt="Coração" class="donate-heart-icon"> Doe aqui</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <main class="main-content">
+        <!-- Hero Section - Doe Aqui -->
+        <section class="donate-hero">
+            <div class="donate-hero-content">
+                <h1 class="donate-hero-title">Doe aqui</h1>
+                <p class="donate-hero-text">A Osjc ajuda famílias a saírem da vulnerabilidade social. Sua contribuição é essencial para manter programas de amparo e proteção em todas as fases da vida.</p>
+            </div>
+        </section>
+
+        <!-- Seção de Doação -->
+        <section class="donate-section">
+            <div class="container">
+                <div class="donate-content">
+                    <!-- Lado Esquerdo - Dados Bancários -->
+                    <div class="donate-text-side">
+                        <div class="bank-data-container" id="bankDataContainer" title="Clique para copiar os dados bancários">
+                            <h2 class="bank-data-title">Dados bancários para doação</h2>
+                            <div class="bank-data-content">
+                                <p class="bank-data-line"><strong>BANCO:</strong> 070 - BRB BANCO DE BRASÍLIA S/A</p>
+                                <p class="bank-data-line"><strong>AGÊNCIA:</strong> 050 PONTA NORTE</p>
+                                <p class="bank-data-line"><strong>CONTA CORRENTE:</strong> 050.022029-8</p>
+                                <p class="bank-data-line"><strong>FAVORECIDO:</strong> OBRAS SOCIAIS C E F J CANDINHO</p>
+                            </div>
+                            <div class="bank-data-copy-hint">
+                                <i class="fa-solid fa-copy"></i> Clique para copiar
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Lado Direito - Formulário de Doação -->
+                    <div class="donate-form-side">
+                        <div class="donate-form-container">
+                            <h3 class="donate-form-title">Escolha um valor abaixo para doar:</h3>
+                            <div class="donate-amount-buttons">
+                                <button class="donate-amount-btn" data-amount="15">R$ 15</button>
+                                <button class="donate-amount-btn" data-amount="30">R$ 30</button>
+                                <a href="https://pag.ae/81gQ2eMX3" target="_blank" rel="noopener" class="donate-amount-btn donate-amount-link" data-amount="50">R$ 50</a>
+                                <button class="donate-amount-btn" data-amount="80">R$ 80</button>
+                                <a href="https://pag.ae/81gQ2UsnH" target="_blank" rel="noopener" class="donate-amount-btn donate-amount-link" data-amount="100">R$ 100</a>
+                                <button class="donate-amount-btn" data-amount="140">R$ 140</button>
+                            </div>
+                            <a href="https://pag.ae/81gQ3wwX2" target="_blank" rel="noopener" class="donate-basket-btn donate-basket-link">Cesta básica de Natal</a>
+                            <div class="donate-custom-amount">
+                                <label for="custom-amount">Ou digite um valor personalizado:</label>
+                                <div class="custom-amount-input">
+                                    <span class="currency-symbol">R$</span>
+                                    <input type="number" id="custom-amount" placeholder="0,00" min="1" step="0.01">
+                                </div>
+                            </div>
+                            <button class="donate-submit-btn">Continuar com a doação</button>
+                        </div>
+                        <div class="donate-hero-image">
+                            <!-- Imagem do super-herói será adicionada aqui -->
+                            <img src="assets/superhero-placeholder.png" alt="Super-herói" class="superhero-img" style="display: none;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section footer-about">
+                    <h4>Obras Sociais do Centro Espírita Fraternidade Jerônimo Candinho</h4>
+                    <p>Fundada em 1986, atua desde 1986 na cidade de Sobradinho - DF.</p>
+                </div>
+                
+                <div class="footer-section footer-nav">
+                    <h4>Navegação</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="quem-somos.html">Quem Somos</a></li>
+                        <li><a href="posts.html">Programas e Projetos</a></li>
+                        <li><a href="pages.html">Vagas</a></li>
+                        <li><a href="posts.html">Blog</a></li>
+                        <li><a href="pages.html">Transparência</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section footer-programs">
+                    <h4>Programas</h4>
+                    <ul class="footer-links">
+                        <li><a href="posts.html">Osceia Inclusão</a></li>
+                        <li><a href="posts.html">Florescer</a></li>
+                        <li><a href="posts.html">Educandário Espírita</a></li>
+                        <li><a href="posts.html">Jovem Aprendiz</a></li>
+                        <li><a href="posts.html">Planeje Estágio</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section footer-contact">
+                    <h4>Contato</h4>
+                    <div class="contact-info">
+                        <p class="contact-item">
+                            <span class="contact-icon">📍</span>
+                            <span>Quadra 12 conjunto A predios verdes <br>Brasília - DF</span>
+                        </p>
+                        <p class="contact-item">
+                            <span class="contact-icon">📞</span>
+                            <span>(62) 0000-0000</span>
+                        </p>
+                        <p class="contact-item">
+                            <span class="contact-icon">✉️</span>
+                            <span>contato@osjc.org.br</span>
+                        </p>
+                        <p class="contact-item">
+                            <span class="contact-icon">🕒</span>
+                            <span>Segunda a Sexta<br>8h às 17h</span>
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="footer-section footer-social">
+                    <h4>Redes Sociais</h4>
+                    <div class="footer-social-icons">
+                        <a href="https://www.instagram.com/jeronimocandinho.osjc?igsh=NHlmb3NxN2p0ODh1" target="_blank" rel="noopener" aria-label="Instagram" class="footer-social-link">
+                            <span class="social-icon-text">Instagram</span>
+                        </a>
+                        <a href="https://www.facebook.com" target="_blank" rel="noopener" aria-label="Facebook" class="footer-social-link">
+                            <span class="social-icon-text">Facebook</span>
+                        </a>
+                        <a href="https://www.youtube.com" target="_blank" rel="noopener" aria-label="YouTube" class="footer-social-link">
+                            <span class="social-icon-text">YouTube</span>
+                        </a>
+                        <a href="https://wa.me/5561981691123" target="_blank" rel="noopener" aria-label="WhatsApp" class="footer-social-link">
+                            <span class="social-icon-text">WhatsApp</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; Copyright 2025 – <strong>Obras Sociais do Centro Espírita Fraternidade Jerônimo Candinho</strong> – Todos os direitos reservados</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="js/main.js"></script>
+    <script src="js/doe-aqui.js"></script>
+</body>
+</html>
+
