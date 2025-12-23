@@ -156,6 +156,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Carrossel do Banner
     initHeroCarousel();
     
+    // Carrossel de Programas
+    initHeroCarousel('programsCarousel');
+    
     // Toggle Dark/Light Mode
     initThemeToggle();
     
@@ -164,6 +167,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Inicializa drawers do menu
     initNavDrawers();
+    
+    // Adiciona espaço para imagem em todos os post-items
+    initPostItemImages();
     
     console.log('Site carregado com sucesso!');
 });
@@ -289,6 +295,47 @@ function initNavDrawers() {
     });
 }
 
+// Função para adicionar espaço de imagem em todos os post-items
+function initPostItemImages() {
+    const postItems = document.querySelectorAll('.post-item');
+    
+    postItems.forEach(postItem => {
+        // Verifica se já tem a estrutura de imagem
+        if (postItem.querySelector('.post-item-content')) {
+            return; // Já tem, pula
+        }
+        
+        // Cria a estrutura de conteúdo
+        const content = document.createElement('div');
+        content.className = 'post-item-content';
+        
+        // Cria o wrapper da imagem
+        const imageWrapper = document.createElement('div');
+        imageWrapper.className = 'post-image-wrapper';
+        const img = document.createElement('img');
+        img.src = 'hero-poster.jpg';
+        img.alt = 'Imagem do projeto';
+        img.className = 'post-image';
+        imageWrapper.appendChild(img);
+        
+        // Cria o wrapper do texto
+        const textContent = document.createElement('div');
+        textContent.className = 'post-text-content';
+        
+        // Move todo o conteúdo existente para textContent
+        while (postItem.firstChild) {
+            textContent.appendChild(postItem.firstChild);
+        }
+        
+        // Adiciona os elementos ao content
+        content.appendChild(imageWrapper);
+        content.appendChild(textContent);
+        
+        // Adiciona o content ao post-item
+        postItem.appendChild(content);
+    });
+}
+
 // Função para inicializar o toggle de tema
 function initThemeToggle() {
     const themeToggle = document.getElementById('themeToggle');
@@ -322,8 +369,11 @@ function initThemeToggle() {
 }
 
 // Função para inicializar o carrossel do banner
-function initHeroCarousel() {
-    const carousel = document.querySelector('.hero-carousel');
+function initHeroCarousel(carouselId) {
+    // Se um ID específico foi passado, usa ele, senão usa o primeiro .hero-carousel encontrado
+    const carousel = carouselId 
+        ? document.getElementById(carouselId)
+        : document.querySelector('.hero-carousel');
     if (!carousel) return;
     
     const slides = carousel.querySelectorAll('.hero-carousel-slide');

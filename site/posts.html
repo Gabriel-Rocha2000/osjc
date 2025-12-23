@@ -7,45 +7,107 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header class="site-header">
+    <header class="site-header" id="siteHeader">
         <div class="container">
-            <div class="header-left">
-                <div class="logo-circle">
-                    <img src="LOGO-JERONIMO-NEW-1-90x90.png" alt="Logo Jerônimo Candinho" />
+            <div class="header-top">
+                <div class="header-left">
+                    <div class="logo-circle">
+                        <img src="LOGO-JERONIMO-NEW-1-90x90.png" alt="Logo Jerônimo Candinho" />
+                    </div>
+                    <h1 class="site-title"><a href="index.html">Obras Sociais C.E.F. Jerônimo Candinho</a></h1>
                 </div>
-                <h1 class="site-title"><a href="index.html">Obras Sociais do Centro Espírita Fraternidade Jerônimo Candinho</a></h1>
             </div>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="index.html">Início</a></li>
-                    <li><a href="quem-somos.html">Quem somos</a></li>
-                    <li><a href="posts.html">O que fazemos</a></li>
-                    <li><a href="pages.html">Compliance</a></li>
-                    <li><a href="pages.html">Contato</a></li>
-                    <li><a href="posts.html">Blog</a></li>
-                </ul>
-            </nav>
-            <div class="header-right">
-                <a href="index.html" class="donate-button">Doe Aqui</a>
+            <div class="header-bottom">
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="index.html" class="nav-link">Home</a></li>
+                        <li><a href="quem-somos.html" class="nav-link">Quem Somos</a></li>
+                        <li><a href="posts.html" class="nav-link">Programas</a></li>
+                        <li><a href="pages.html" class="nav-link">Vagas</a></li>
+                        <li><a href="posts.html" class="nav-link">Blog</a></li>
+                        <li><a href="pages.html" class="nav-link">Transparência</a></li>
+                        <li><a href="pages/todas/contato.html" class="nav-link">Contato</a></li>
+                    </ul>
+                </nav>
+                <div class="header-actions">
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/jeronimocandinho.osjc?igsh=NHlmb3NxN2p0ODh1" target="_blank" rel="noopener" aria-label="Instagram" class="social-icon">
+                            <img src="./assets/instagram-icon.svg" alt="Instagram" class="social-icon-img" />
+                        </a>
+                        <a href="https://www.facebook.com" target="_blank" rel="noopener" aria-label="Facebook" class="social-icon">
+                            <img src="./assets/facebook-icon.svg" alt="Facebook" class="social-icon-img" />
+                        </a>
+                        <a href="https://youtube.com" target="_blank" rel="noopener" aria-label="YouTube" class="social-icon">
+                            <img src="./youtube-123.svg" alt="YouTube" class="social-icon-img" />
+                        </a>
+                    </div>
+                    <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema">
+                        <span class="theme-icon">🌙</span>
+                    </button>
+                    <a href="doe-aqui.html" class="donate-button"><img src="./heart-icon.png" alt="Coração" class="donate-heart-icon"> Doe aqui</a>
+                </div>
             </div>
         </div>
     </header>
     
     <main class="main-content">
-        <div class="container">
-            <article class="content-post">
-                <h1 class="post-title">Posts</h1>
-                <div class="post-content">
-                    
-        <h1>Todos os Posts</h1>
-        <div class="organization-links">
-            <p><strong>Navegação:</strong></p>
-            <ul>
-                <li><a href="posts/categorias/">Ver por Categorias</a></li>
-                <li><a href="posts/datas/">Ver por Data</a></li>
-                <li><a href="posts/todos/">Ver Todos os Posts</a></li>
-            </ul>
-        </div>
+        <!-- Carrossel de Programas -->
+        <section class="hero">
+            <div class="hero-right" style="flex: 1; padding: 0;">
+                <div class="hero-carousel hero-carousel-fullwidth" id="programsCarousel">
+                    <div class="hero-carousel-track">
+                        <div class="hero-carousel-slide active">
+                            <img src="hero-poster.jpg" alt="Programas e Projetos" class="hero-carousel-image" />
+                        </div>
+                        <div class="hero-carousel-slide">
+                            <img src="hero-poster.jpg" alt="Jovem Aprendiz" class="hero-carousel-image" />
+                        </div>
+                        <div class="hero-carousel-slide">
+                            <img src="hero-poster.jpg" alt="Qualificação Profissional" class="hero-carousel-image" />
+                        </div>
+                        <div class="hero-carousel-slide">
+                            <img src="hero-poster.jpg" alt="Educandário Espírita" class="hero-carousel-image" />
+                        </div>
+                    </div>
+                    <button class="hero-nav-arrow hero-nav-prev" aria-label="Anterior">‹</button>
+                    <button class="hero-nav-arrow hero-nav-next" aria-label="Próximo">›</button>
+                    <div class="hero-carousel-dots">
+                        <span class="carousel-dot active" data-slide="0"></span>
+                        <span class="carousel-dot" data-slide="1"></span>
+                        <span class="carousel-dot" data-slide="2"></span>
+                        <span class="carousel-dot" data-slide="3"></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Programas -->
+        <section class="programs-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Nossos Programas</span>
+                    <h2>Programas e Projetos Sociais</h2>
+                    <p style="max-width: 800px; margin: var(--spacing-md) auto 0; color: var(--text-medium); font-size: 1.1rem; line-height: 1.8;">
+                        Conheça os programas e projetos que desenvolvemos para transformar vidas e fortalecer nossa comunidade.
+                    </p>
+                </div>
+                
+                <div class="organization-links" style="background: var(--white); padding: var(--spacing-md); border-radius: 15px; margin-bottom: var(--spacing-lg); box-shadow: 0 4px 15px rgba(45, 80, 22, 0.08);">
+                    <p style="margin-bottom: var(--spacing-sm); font-weight: 600; color: var(--green-dark);"><strong>Navegação:</strong></p>
+                    <ul style="display: flex; gap: var(--spacing-md); flex-wrap: wrap; list-style: none; margin: 0; padding: 0;">
+                        <li><a href="posts/categorias/" style="color: var(--green-olive); text-decoration: none; padding: 0.5rem 1rem; border: 2px solid var(--green-olive); border-radius: 25px; transition: var(--transition-smooth); display: inline-block;">Ver por Categorias</a></li>
+                        <li><a href="posts/datas/" style="color: var(--green-olive); text-decoration: none; padding: 0.5rem 1rem; border: 2px solid var(--green-olive); border-radius: 25px; transition: var(--transition-smooth); display: inline-block;">Ver por Data</a></li>
+                        <li><a href="posts/todos/" style="color: var(--green-olive); text-decoration: none; padding: 0.5rem 1rem; border: 2px solid var(--green-olive); border-radius: 25px; transition: var(--transition-smooth); display: inline-block;">Ver Todos os Posts</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lista de Posts por Categoria -->
+        <section class="news-section">
+            <div class="container">
+                <article class="content-post">
+                    <div class="post-content">
         <div class="posts-list">
             
             <section class="category-section">
@@ -55,25 +117,39 @@
                 </h2>
             
                 <article class="post-item">
-                    <h3><a href="posts/todos/projeto-acordes-da-vida-e-destaque-no-jornal-nacional-e-no-jornal-da-globo.html">Projeto Acordes da Vida é destaque no Jornal Nacional e no Jornal da Globo</a></h3>
-                    <p class="post-meta">
-                        Publicado em 2019-12-16 por jeronimo.candinho
-                         | <span class="category-tag">Acordes da Vida</span>, <span class="category-tag">Notícias</span>
-                    </p>
-                    <div class="post-excerpt"><!-- wp:paragraph -->
+                    <div class="post-item-content">
+                        <div class="post-image-wrapper">
+                            <img src="hero-poster.jpg" alt="Projeto Acordes da Vida" class="post-image" />
+                        </div>
+                        <div class="post-text-content">
+                            <h3><a href="posts/todos/projeto-acordes-da-vida-e-destaque-no-jornal-nacional-e-no-jornal-da-globo.html">Projeto Acordes da Vida é destaque no Jornal Nacional e no Jornal da Globo</a></h3>
+                            <p class="post-meta">
+                                Publicado em 2019-12-16 por jeronimo.candinho
+                                 | <span class="category-tag">Acordes da Vida</span>, <span class="category-tag">Notícias</span>
+                            </p>
+                            <div class="post-excerpt"><!-- wp:paragraph -->
 <p>Na última terça-feira, 20 de novembro, o projeto Acordes da Vida foi destaque no jornalismo da Rede Globo de Televisão. A açã...</div>
-                    <a href="posts/todos/projeto-acordes-da-vida-e-destaque-no-jornal-nacional-e-no-jornal-da-globo.html" class="read-more">Ler mais →</a>
+                            <a href="posts/todos/projeto-acordes-da-vida-e-destaque-no-jornal-nacional-e-no-jornal-da-globo.html" class="read-more">Ler mais →</a>
+                        </div>
+                    </div>
                 </article>
                 
                 <article class="post-item">
-                    <h3><a href="posts/todos/musica-na-comunidade-acao-em-sobradinho-no-distrito-federal-recebe-apoio-do-crianca-esperanca.html">Música na Comunidade: ação em Sobradinho no Distrito Federal recebe apoio do Criança Esperança</a></h3>
-                    <p class="post-meta">
-                        Publicado em 2019-12-16 por jeronimo.candinho
-                         | <span class="category-tag">Acordes da Vida</span>
-                    </p>
-                    <div class="post-excerpt"><!-- wp:paragraph -->
+                    <div class="post-item-content">
+                        <div class="post-image-wrapper">
+                            <img src="hero-poster.jpg" alt="Música na Comunidade" class="post-image" />
+                        </div>
+                        <div class="post-text-content">
+                            <h3><a href="posts/todos/musica-na-comunidade-acao-em-sobradinho-no-distrito-federal-recebe-apoio-do-crianca-esperanca.html">Música na Comunidade: ação em Sobradinho no Distrito Federal recebe apoio do Criança Esperança</a></h3>
+                            <p class="post-meta">
+                                Publicado em 2019-12-16 por jeronimo.candinho
+                                 | <span class="category-tag">Acordes da Vida</span>
+                            </p>
+                            <div class="post-excerpt"><!-- wp:paragraph -->
 <p>Proporcionar a crianças e jovens em situação de vulnerabilidade alternativas saudáveis. É isso que o projeto Acordes da Vida ...</div>
-                    <a href="posts/todos/musica-na-comunidade-acao-em-sobradinho-no-distrito-federal-recebe-apoio-do-crianca-esperanca.html" class="read-more">Ler mais →</a>
+                            <a href="posts/todos/musica-na-comunidade-acao-em-sobradinho-no-distrito-federal-recebe-apoio-do-crianca-esperanca.html" class="read-more">Ler mais →</a>
+                        </div>
+                    </div>
                 </article>
                 </section>
             <section class="category-section">
@@ -704,11 +780,10 @@ Numa parceria com a Secr...</div>
                     <a href="posts/todos/ajude-quem-tem-fome.html" class="read-more">Ler mais →</a>
                 </article>
                 </section>
-        </div>
-        
-                </div>
-            </article>
-        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
     </main>
     
     <footer class="site-footer">
