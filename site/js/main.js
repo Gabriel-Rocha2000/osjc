@@ -171,7 +171,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Adiciona espaço para imagem em todos os post-items
     initPostItemImages();
     
-    console.log('Site carregado com sucesso!');
+    // Site carregado com sucesso
 });
 
 // Função para inicializar drawers do menu

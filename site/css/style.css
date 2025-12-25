@@ -1847,13 +1847,7 @@ body.dark-mode .recent-posts-cta-content p {
     box-shadow: 0 8px 30px rgba(45, 80, 22, 0.15);
 }
 
-.program-item-text-left {
-    /* Texto à esquerda, imagem à direita - ordem padrão */
-}
-
-.program-item-image-left {
-    /* Imagem à esquerda, texto à direita - inverte ordem */
-}
+/* Program items - ordem padrão já definida no grid */
 
 .program-item-image-left .program-image-wrapper {
     order: 1;
