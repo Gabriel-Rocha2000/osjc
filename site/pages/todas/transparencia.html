@@ -7,44 +7,164 @@
     <link rel="stylesheet" href="../../css/style.css">
 </head>
 <body>
-    <header class="site-header">
+    <header class="site-header" id="siteHeader">
         <div class="container">
-            <div class="header-left">
-                <div class="logo-circle">
-                    <img src="../../LOGO-JERONIMO-NEW-1-90x90.png" alt="Logo Jerônimo Candinho" />
+            <div class="header-top">
+                <div class="header-left">
+                    <div class="logo-circle">
+                        <img src="../../LOGO-JERONIMO-NEW-1-90x90.png" alt="Logo Jerônimo Candinho" />
+                    </div>
+                    <h1 class="site-title"><a href="../../index.html">Obras Sociais C.E.F. Jerônimo Candinho</a></h1>
                 </div>
-                <h1 class="site-title"><a href="../../index.html">Obras Sociais do Centro Espírita Fraternidade Jerônimo Candinho</a></h1>
             </div>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="../../index.html">Início</a></li>
-                    <li><a href="../../pages.html">Quem somos</a></li>
-                    <li><a href="../../posts.html">O que fazemos</a></li>
-                    <li><a href="../../pages.html">Compliance</a></li>
-                    <li><a href="../../pages.html">Contato</a></li>
-                    <li><a href="../../posts.html">Blog</a></li>
-                </ul>
-            </nav>
-            <div class="header-right">
-                <a href="../../index.html" class="donate-button">Doe Aqui</a>
+            <div class="header-bottom">
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="../../index.html" class="nav-link">Home</a></li>
+                        <li><a href="../../quem-somos.html" class="nav-link">Quem Somos</a></li>
+                        <li><a href="../../posts.html" class="nav-link">Programas</a></li>
+                        <li><a href="../../pages.html" class="nav-link">Vagas</a></li>
+                        <li><a href="../../posts.html" class="nav-link">Blog</a></li>
+                        <li><a href="transparencia.html" class="nav-link">Transparência</a></li>
+                        <li><a href="../../pages/todas/contato.html" class="nav-link">Contato</a></li>
+                    </ul>
+                </nav>
+                <div class="header-actions">
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/jeronimocandinho.osjc?igsh=NHlmb3NxN2p0ODh1" target="_blank" rel="noopener" aria-label="Instagram" class="social-icon">
+                            <img src="../../assets/instagram-icon.svg" alt="Instagram" class="social-icon-img" />
+                        </a>
+                        <a href="https://www.facebook.com" target="_blank" rel="noopener" aria-label="Facebook" class="social-icon">
+                            <img src="../../assets/facebook-icon.svg" alt="Facebook" class="social-icon-img" />
+                        </a>
+                        <a href="https://youtube.com" target="_blank" rel="noopener" aria-label="YouTube" class="social-icon">
+                            <img src="../../youtube-123.svg" alt="YouTube" class="social-icon-img" />
+                        </a>
+                    </div>
+                    <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema">
+                        <span class="theme-icon">🌙</span>
+                    </button>
+                    <a href="../../doe-aqui.html" class="donate-button"><img src="../../heart-icon.png" alt="Coração" class="donate-heart-icon"> Doe aqui</a>
+                </div>
             </div>
         </div>
     </header>
     
     <main class="main-content">
-        <div class="container">
-            <article class="content-post">
-                <h1 class="post-title">Transparência</h1>
-                <div class="post-content">
-                    [include page=transparencia]
+        <!-- Seção de Transparência -->
+        <section class="transparency-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Nossa missão</span>
+                    <h1>AJUDE QUEM TEM FOME</h1>
                 </div>
-            </article>
-        </div>
+                
+                <!-- Vídeo do YouTube -->
+                <div class="transparency-video-wrapper">
+                    <div class="video-container">
+                        <iframe 
+                            src="https://www.youtube.com/embed/nJWzHtltPqA" 
+                            title="Ajude quem tem fome - Obras Sociais Jerônimo Candinho" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen
+                            loading="lazy">
+                        </iframe>
+                    </div>
+                </div>
+                
+                <!-- Conteúdo de Texto -->
+                <div class="transparency-content">
+                    <div class="transparency-text">
+                        <p>A desnutrição é responsável por quase metade das mortes de crianças menores de cinco anos em todo o mundo, o que equivale a cerca de 3 milhões de vidas perdidas a cada ano.</p>
+                        
+                        <p>Segundo dados da Organização das Nações Unidas (ONU) para Alimentação e Agricultura (FAO), cerca de 811 milhões de pessoas no mundo passam fome.</p>
+                        
+                        <p>Na <strong>Projeto Ajude quem tem fome</strong>, nosso compromisso com a comunidade é impulsionado por um objetivo primordial: proporcionar esperança e apoio aos mais necessitados. Estamos emocionados em compartilhar a notícia de que, graças ao apoio inestimável de nossos doadores e voluntários, conseguimos ajudar mais de <strong>180 famílias por semana</strong> a terem acesso a alimentos nutritivos e essenciais. Essa conquista é um testemunho do poder transformador do amor e da generosidade.</p>
+                        
+                        <p>Com sua doação, poderemos fornecer ajuda essencial a pessoas em situação de necessidade. Isso pode incluir fornecer alimentos nutritivos para famílias que estão lutando para alimentar seus filhos. Além disso, sua doação também pode ajudar a apoiar nossos programas educacionais, como ajudar no lanche do <strong>Colégio Allan Kardec</strong>, que hoje atende mais de <strong>55 alunos</strong>. Sua doação pode ajudar a mudar o curso da vida de alguém, e é por isso que sua contribuição é tão valiosa.</p>
+                        
+                        <p>Nosso programa de entrega de cestas básicas é uma iniciativa abrangente que visa alcançar o máximo de pessoas possível. Trabalhamos em parceria com organizações locais, empresas e doadores generosos para coletar alimentos e recursos financeiros. Com esses recursos, montamos as cestas básicas.</p>
+                        
+                        <p>Essas cestas básicas são entregues aos <strong>Sábados na própria instituição</strong>, que está localizada na <strong>Quadra 12 – Área reservada número 03 – Sobradinho-DF</strong>.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
     
     <footer class="site-footer">
         <div class="container">
-            <p>&copy; 2025 Obras Sociais do Centro Espírita Fraternidade Jerônimo Candinho. Todos os direitos reservados.</p>
+            <div class="footer-content">
+                <div class="footer-section footer-about">
+                    <h4>Obras Sociais do Centro Espírita Fraternidade Jerônimo Candinho</h4>
+                    <p>Fundada por um grupo de voluntários em 04/05/1984. Tem sua sede no Jardim Nova Esperança e extensão no Jardim Liberdade – Goiânia-GO.</p>
+                    <p class="footer-cnpj"><strong>CNPJ:</strong> 25.006.149/0001-09</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Navegação</h4>
+                    <ul class="footer-links">
+                        <li><a href="../../index.html">Home</a></li>
+                        <li><a href="../../quem-somos.html">Quem Somos</a></li>
+                        <li><a href="../../posts.html">Programas e Projetos</a></li>
+                        <li><a href="../../pages.html">Vagas</a></li>
+                        <li><a href="../../posts.html">Blog</a></li>
+                        <li><a href="transparencia.html">Transparência</a></li>
+                        <li><a href="../../pages/todas/contato.html">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Programas</h4>
+                    <ul class="footer-links">
+                        <li><a href="../../posts.html">Osceia Inclusão</a></li>
+                        <li><a href="../../posts.html">Florescer</a></li>
+                        <li><a href="../../posts.html">Educandário Espírita</a></li>
+                        <li><a href="../../posts.html">Jovem Aprendiz</a></li>
+                        <li><a href="../../posts.html">Planeje Estágio</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contato</h4>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <span class="contact-icon">📍</span>
+                            <span>Quadra 12, Conjunto A, Área Reservada número 03 - Sobradinho DF</span>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">📞</span>
+                            <span>(61) 3051-3903</span>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">✉️</span>
+                            <span>contato@osceia.org.br</span>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">⏰</span>
+                            <span>Segunda a Sexta: 8h às 18h</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Redes Sociais</h4>
+                    <div class="footer-social-icons">
+                        <a href="https://www.instagram.com/jeronimocandinho.osjc?igsh=NHlmb3NxN2p0ODh1" target="_blank" rel="noopener" aria-label="Instagram" class="footer-social-link">
+                            <span class="social-icon-text">Instagram</span>
+                        </a>
+                        <a href="https://www.facebook.com" target="_blank" rel="noopener" aria-label="Facebook" class="footer-social-link">
+                            <span class="social-icon-text">Facebook</span>
+                        </a>
+                        <a href="https://www.youtube.com" target="_blank" rel="noopener" aria-label="YouTube" class="footer-social-link">
+                            <span class="social-icon-text">YouTube</span>
+                        </a>
+                        <a href="https://wa.me/5561981691123" target="_blank" rel="noopener" aria-label="WhatsApp" class="footer-social-link">
+                            <span class="social-icon-text">WhatsApp</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; Copyright 2025 – <strong>Obras Sociais do Centro Espírita Fraternidade Jerônimo Candinho</strong> – Todos os direitos reservados</p>
+            </div>
         </div>
     </footer>
     
