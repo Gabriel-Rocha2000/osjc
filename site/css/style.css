@@ -1598,6 +1598,156 @@ body.dark-mode .recent-posts-cta-content p {
 }
 
 /* Página Quem Somos */
+.quem-somos-section {
+    background: var(--white);
+    padding: var(--spacing-xl) 0;
+    position: relative;
+    z-index: 2;
+}
+
+.quem-somos-section .section-header {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+}
+
+.quem-somos-section .section-header h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    color: var(--green-dark);
+    font-weight: 600;
+    margin-top: var(--spacing-sm);
+    line-height: 1.2;
+}
+
+.quem-somos-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-xl);
+    align-items: start;
+}
+
+.quem-somos-image-wrapper {
+    width: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(45, 80, 22, 0.15);
+    transition: var(--transition-smooth);
+    position: sticky;
+    top: 120px;
+}
+
+.quem-somos-image-wrapper:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(45, 80, 22, 0.2);
+}
+
+.quem-somos-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: transform 0.4s ease;
+}
+
+.quem-somos-image:hover {
+    transform: scale(1.05);
+}
+
+.quem-somos-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.quem-somos-description {
+    background: var(--green-pale);
+    padding: var(--spacing-xl);
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(45, 80, 22, 0.08);
+    line-height: 1.8;
+}
+
+.quem-somos-description p {
+    color: var(--text-medium);
+    font-size: 1.1rem;
+    margin-bottom: var(--spacing-md);
+    text-align: justify;
+}
+
+.quem-somos-description p:last-child {
+    margin-bottom: 0;
+}
+
+.quem-somos-description p strong {
+    color: var(--green-dark);
+    font-weight: 600;
+}
+
+/* Responsividade - Quem Somos */
+@media (max-width: 1024px) {
+    .quem-somos-section {
+        padding: var(--spacing-lg) 0;
+    }
+    
+    .quem-somos-content {
+        gap: var(--spacing-lg);
+    }
+    
+    .quem-somos-image-wrapper {
+        position: relative;
+        top: 0;
+    }
+    
+    .quem-somos-description {
+        padding: var(--spacing-lg);
+    }
+}
+
+@media (max-width: 768px) {
+    .quem-somos-section {
+        padding: var(--spacing-md) 0;
+    }
+    
+    .quem-somos-section .section-header {
+        margin-bottom: var(--spacing-lg);
+    }
+    
+    .quem-somos-section .section-header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .quem-somos-content {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+    
+    .quem-somos-image-wrapper {
+        order: -1;
+    }
+    
+    .quem-somos-description {
+        padding: var(--spacing-md);
+    }
+    
+    .quem-somos-description p {
+        font-size: 1rem;
+        text-align: left;
+    }
+}
+
+@media (max-width: 480px) {
+    .quem-somos-description {
+        padding: var(--spacing-sm);
+    }
+    
+    .quem-somos-description p {
+        font-size: 0.95rem;
+    }
+}
+
+/* Mantém estilos antigos para compatibilidade */
 .about-section {
     background: var(--white);
     padding: var(--spacing-xl) 0;
@@ -1743,6 +1893,156 @@ body.dark-mode .recent-posts-cta-content p {
     background: var(--white);
     border-color: var(--white);
     transform: scale(1.2);
+}
+
+/* Página Quem Somos - Nova Estrutura */
+.quem-somos-section {
+    background: var(--white);
+    padding: var(--spacing-xl) 0;
+    position: relative;
+    z-index: 2;
+}
+
+.quem-somos-section .section-header {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+}
+
+.quem-somos-section .section-header h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    color: var(--green-dark);
+    font-weight: 600;
+    margin-top: var(--spacing-sm);
+    line-height: 1.2;
+}
+
+.quem-somos-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-xl);
+    align-items: start;
+}
+
+.quem-somos-image-wrapper {
+    width: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(45, 80, 22, 0.15);
+    transition: var(--transition-smooth);
+    position: sticky;
+    top: 120px;
+}
+
+.quem-somos-image-wrapper:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(45, 80, 22, 0.2);
+}
+
+.quem-somos-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: transform 0.4s ease;
+}
+
+.quem-somos-image:hover {
+    transform: scale(1.05);
+}
+
+.quem-somos-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.quem-somos-description {
+    background: var(--green-pale);
+    padding: var(--spacing-xl);
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(45, 80, 22, 0.08);
+    line-height: 1.8;
+}
+
+.quem-somos-description p {
+    color: var(--text-medium);
+    font-size: 1.1rem;
+    margin-bottom: var(--spacing-md);
+    text-align: justify;
+}
+
+.quem-somos-description p:last-child {
+    margin-bottom: 0;
+}
+
+.quem-somos-description p strong {
+    color: var(--green-dark);
+    font-weight: 600;
+}
+
+/* Responsividade - Quem Somos */
+@media (max-width: 1024px) {
+    .quem-somos-section {
+        padding: var(--spacing-lg) 0;
+    }
+    
+    .quem-somos-content {
+        gap: var(--spacing-lg);
+    }
+    
+    .quem-somos-image-wrapper {
+        position: relative;
+        top: 0;
+    }
+    
+    .quem-somos-description {
+        padding: var(--spacing-lg);
+    }
+}
+
+@media (max-width: 768px) {
+    .quem-somos-section {
+        padding: var(--spacing-md) 0;
+    }
+    
+    .quem-somos-section .section-header {
+        margin-bottom: var(--spacing-lg);
+    }
+    
+    .quem-somos-section .section-header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .quem-somos-content {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+    
+    .quem-somos-image-wrapper {
+        order: -1;
+    }
+    
+    .quem-somos-description {
+        padding: var(--spacing-md);
+    }
+    
+    .quem-somos-description p {
+        font-size: 1rem;
+        text-align: left;
+    }
+}
+
+@media (max-width: 480px) {
+    .quem-somos-description {
+        padding: var(--spacing-sm);
+    }
+    
+    .quem-somos-description p {
+        font-size: 0.95rem;
+    }
 }
 
 /* Seção Missão, Visão e Valores */
