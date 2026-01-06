@@ -122,16 +122,44 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Controle do header ao fazer scroll (siteHeader já foi declarado acima)
     let lastScroll = 0;
+    let scrollThreshold = 100; // Distância mínima para ativar o comportamento
     
     function handleScroll() {
+        // Não esconde header se drawer estiver aberto em mobile
+        if (isMobile() && siteHeader && siteHeader.classList.contains('drawer-open')) {
+            return;
+        }
+        
         const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
         
         if (siteHeader) {
+            // Se estiver no topo, sempre mostra o header
+            if (currentScroll < scrollThreshold) {
+                siteHeader.classList.remove('scrolled');
+                siteHeader.classList.remove('header-hidden');
+                lastScroll = currentScroll;
+                return;
+            }
+            
             // Adiciona classe 'scrolled' quando rola para baixo
-            if (currentScroll > 100) {
+            if (currentScroll > scrollThreshold) {
                 siteHeader.classList.add('scrolled');
             } else {
                 siteHeader.classList.remove('scrolled');
+            }
+            
+            // Esconde header ao rolar para baixo, mostra ao rolar para cima
+            const scrollDifference = Math.abs(currentScroll - lastScroll);
+            
+            // Só esconde/mostra se a diferença de scroll for significativa (evita flickering)
+            if (scrollDifference > 5) {
+                if (currentScroll > lastScroll && currentScroll > scrollThreshold) {
+                    // Rolando para baixo - esconde
+                    siteHeader.classList.add('header-hidden');
+                } else if (currentScroll < lastScroll) {
+                    // Rolando para cima - mostra
+                    siteHeader.classList.remove('header-hidden');
+                }
             }
         }
         
