@@ -92,13 +92,46 @@
                     </p>
                 </div>
                 
-                <div class="organization-links" style="background: var(--white); padding: var(--spacing-md); border-radius: 15px; margin-bottom: var(--spacing-lg); box-shadow: 0 4px 15px rgba(45, 80, 22, 0.08);">
-                    <p style="margin-bottom: var(--spacing-sm); font-weight: 600; color: var(--green-dark);"><strong>Navegação:</strong></p>
-                    <ul style="display: flex; gap: var(--spacing-md); flex-wrap: wrap; list-style: none; margin: 0; padding: 0;">
-                        <li><a href="posts/categorias/" style="color: var(--green-olive); text-decoration: none; padding: 0.5rem 1rem; border: 2px solid var(--green-olive); border-radius: 25px; transition: var(--transition-smooth); display: inline-block;">Ver por Categorias</a></li>
-                        <li><a href="posts/datas/" style="color: var(--green-olive); text-decoration: none; padding: 0.5rem 1rem; border: 2px solid var(--green-olive); border-radius: 25px; transition: var(--transition-smooth); display: inline-block;">Ver por Data</a></li>
-                        <li><a href="posts/todos/" style="color: var(--green-olive); text-decoration: none; padding: 0.5rem 1rem; border: 2px solid var(--green-olive); border-radius: 25px; transition: var(--transition-smooth); display: inline-block;">Ver Todos os Posts</a></li>
-                    </ul>
+                <!-- Sistema de Filtros -->
+                <div class="posts-filters">
+                    <div class="filters-header">
+                        <h3>Filtrar por:</h3>
+                        <button class="filter-reset" id="resetFilters">Limpar Filtros</button>
+                    </div>
+                    
+                    <!-- Filtro por Categoria/Programa -->
+                    <div class="filter-group">
+                        <label class="filter-label">Programa/Categoria:</label>
+                        <div class="filter-buttons" id="categoryFilters">
+                            <button class="filter-btn active" data-filter="all" data-type="category">Todos</button>
+                            <button class="filter-btn" data-filter="acordes-da-vida" data-type="category">Acordes da Vida</button>
+                            <button class="filter-btn" data-filter="escola-allan-kardec" data-type="category">Escola Allan Kardec</button>
+                            <button class="filter-btn" data-filter="geral" data-type="category">Geral</button>
+                            <button class="filter-btn" data-filter="notícias" data-type="category">Notícias</button>
+                            <button class="filter-btn" data-filter="parcerias" data-type="category">Parcerias</button>
+                            <button class="filter-btn" data-filter="sem-categoria" data-type="category">Sem categoria</button>
+                            <button class="filter-btn" data-filter="slider" data-type="category">Slider</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Filtro por Data -->
+                    <div class="filter-group">
+                        <label class="filter-label">Ano:</label>
+                        <div class="filter-buttons" id="dateFilters">
+                            <button class="filter-btn active" data-filter="all" data-type="date">Todos</button>
+                            <button class="filter-btn" data-filter="2025" data-type="date">2025</button>
+                            <button class="filter-btn" data-filter="2024" data-type="date">2024</button>
+                            <button class="filter-btn" data-filter="2023" data-type="date">2023</button>
+                            <button class="filter-btn" data-filter="2022" data-type="date">2022</button>
+                            <button class="filter-btn" data-filter="2021" data-type="date">2021</button>
+                            <button class="filter-btn" data-filter="2020" data-type="date">2020</button>
+                            <button class="filter-btn" data-filter="2019" data-type="date">2019</button>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-results">
+                        <span id="filterResultsText">Mostrando todos os posts</span>
+                    </div>
                 </div>
             </div>
         </section>
@@ -134,7 +167,7 @@
                     </div>
                 </article>
                 
-                <article class="post-item">
+                <article class="post-item" data-category="acordes-da-vida" data-date="2019">
                     <div class="post-item-content">
                         <div class="post-image-wrapper">
                             <img src="hero-poster.jpg" alt="Música na Comunidade" class="post-image" />

@@ -168,6 +168,12 @@ document.addEventListener('DOMContentLoaded', function() {
     // Inicializa drawers do menu
     initNavDrawers();
     
+    // Inicializa carrosséis de programas
+    const programCarousels = document.querySelectorAll('.program-carousel');
+    programCarousels.forEach(carousel => {
+        initProgramCarousel(carousel);
+    });
+    
     // Adiciona espaço para imagem em todos os post-items
     initPostItemImages();
     
@@ -571,4 +577,228 @@ function initImageModal() {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         return emailRegex.test(email);
     }
+}
+
+// Sistema de Filtros de Posts
+function initPostsFilters() {
+    const postItems = document.querySelectorAll('.post-item');
+    const categoryFilters = document.querySelectorAll('#categoryFilters .filter-btn');
+    const dateFilters = document.querySelectorAll('#dateFilters .filter-btn');
+    const resetBtn = document.getElementById('resetFilters');
+    const resultsText = document.getElementById('filterResultsText');
+    
+    if (postItems.length === 0) return;
+    
+    // Adiciona atributos data aos posts baseado no conteúdo
+    postItems.forEach(post => {
+        // Extrai categoria das tags
+        const categoryTags = post.querySelectorAll('.category-tag');
+        const categories = Array.from(categoryTags).map(tag => {
+            let cat = tag.textContent.trim().toLowerCase();
+            // Normaliza nomes de categorias
+            cat = cat.replace(/\s+/g, '-');
+            cat = cat.replace(/í/g, 'i');
+            return cat;
+        });
+        if (categories.length > 0) {
+            post.setAttribute('data-category', categories.join(' '));
+        } else {
+            post.setAttribute('data-category', 'sem-categoria');
+        }
+        
+        // Extrai ano da data de publicação
+        const metaText = post.querySelector('.post-meta')?.textContent || '';
+        const yearMatch = metaText.match(/Publicado em (\d{4})/);
+        if (yearMatch) {
+            post.setAttribute('data-date', yearMatch[1]);
+        } else {
+            // Tenta extrair de outras formas
+            const dateMatch = metaText.match(/(\d{4})-\d{2}-\d{2}/);
+            if (dateMatch) {
+                post.setAttribute('data-date', dateMatch[1]);
+            }
+        }
+    });
+    
+    let activeCategory = 'all';
+    let activeDate = 'all';
+    
+    // Função para filtrar posts
+    function filterPosts() {
+        let visibleCount = 0;
+        
+        postItems.forEach(post => {
+            const postCategory = post.getAttribute('data-category') || '';
+            const postDate = post.getAttribute('data-date') || '';
+            
+            const categoryMatch = activeCategory === 'all' || 
+                postCategory.includes(activeCategory.toLowerCase().replace(/\s+/g, '-').replace(/í/g, 'i'));
+            const dateMatch = activeDate === 'all' || postDate === activeDate;
+            
+            if (categoryMatch && dateMatch) {
+                post.style.display = '';
+                visibleCount++;
+            } else {
+                post.style.display = 'none';
+            }
+        });
+        
+        // Atualiza texto de resultados
+        let resultText = '';
+        if (activeCategory === 'all' && activeDate === 'all') {
+            resultText = `Mostrando todos os ${visibleCount} posts`;
+        } else {
+            const filters = [];
+            if (activeCategory !== 'all') {
+                filters.push(`categoria "${activeCategory}"`);
+            }
+            if (activeDate !== 'all') {
+                filters.push(`ano ${activeDate}`);
+            }
+            resultText = `Mostrando ${visibleCount} post${visibleCount !== 1 ? 's' : ''} com ${filters.join(' e ')}`;
+        }
+        if (resultsText) {
+            resultsText.textContent = resultText;
+        }
+        
+        // Scroll suave para o topo dos resultados
+        const postsList = document.querySelector('.posts-list');
+        if (postsList && visibleCount > 0) {
+            postsList.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    }
+    
+    // Event listeners para filtros de categoria
+    categoryFilters.forEach(btn => {
+        btn.addEventListener('click', function() {
+            categoryFilters.forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+            activeCategory = this.getAttribute('data-filter');
+            filterPosts();
+        });
+    });
+    
+    // Event listeners para filtros de data
+    dateFilters.forEach(btn => {
+        btn.addEventListener('click', function() {
+            dateFilters.forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+            activeDate = this.getAttribute('data-filter');
+            filterPosts();
+        });
+    });
+    
+    // Botão reset
+    if (resetBtn) {
+        resetBtn.addEventListener('click', function() {
+            categoryFilters.forEach(b => b.classList.remove('active'));
+            dateFilters.forEach(b => b.classList.remove('active'));
+            categoryFilters[0].classList.add('active');
+            dateFilters[0].classList.add('active');
+            activeCategory = 'all';
+            activeDate = 'all';
+            filterPosts();
+        });
+    }
+    
+    // Inicializa contagem
+    filterPosts();
+}
+
+// Inicializa filtros quando o DOM estiver pronto
+document.addEventListener('DOMContentLoaded', function() {
+    if (document.querySelector('.posts-filters')) {
+        initPostsFilters();
+    }
+});
+
+// Função para inicializar carrossel de programas
+function initProgramCarousel(carouselElement) {
+    if (!carouselElement) return;
+    
+    const slides = carouselElement.querySelectorAll('.program-carousel-slide');
+    const dots = carouselElement.querySelectorAll('.program-carousel-dot');
+    const prevBtn = carouselElement.querySelector('.program-carousel-prev');
+    const nextBtn = carouselElement.querySelector('.program-carousel-next');
+    
+    if (slides.length === 0) return;
+    
+    let currentSlide = 0;
+    let autoplayInterval;
+    
+    // Função para mostrar slide específico
+    function showSlide(index) {
+        // Remove active de todos os slides e dots
+        slides.forEach(slide => slide.classList.remove('active'));
+        dots.forEach(dot => dot.classList.remove('active'));
+        
+        // Adiciona active no slide e dot atual
+        if (slides[index]) {
+            slides[index].classList.add('active');
+        }
+        if (dots[index]) {
+            dots[index].classList.add('active');
+        }
+        
+        currentSlide = index;
+    }
+    
+    // Função para próximo slide
+    function nextSlide() {
+        const next = (currentSlide + 1) % slides.length;
+        showSlide(next);
+    }
+    
+    // Função para slide anterior
+    function prevSlide() {
+        const prev = (currentSlide - 1 + slides.length) % slides.length;
+        showSlide(prev);
+    }
+    
+    // Event listeners para botões
+    if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+            nextSlide();
+            resetAutoplay();
+        });
+    }
+    
+    if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+            prevSlide();
+            resetAutoplay();
+        });
+    }
+    
+    // Event listeners para dots
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            showSlide(index);
+            resetAutoplay();
+        });
+    });
+    
+    // Autoplay
+    function startAutoplay() {
+        autoplayInterval = setInterval(() => {
+            nextSlide();
+        }, 5000); // Muda a cada 5 segundos
+    }
+    
+    function resetAutoplay() {
+        clearInterval(autoplayInterval);
+        startAutoplay();
+    }
+    
+    // Pausa autoplay ao passar o mouse
+    carouselElement.addEventListener('mouseenter', () => {
+        clearInterval(autoplayInterval);
+    });
+    
+    carouselElement.addEventListener('mouseleave', () => {
+        startAutoplay();
+    });
+    
+    // Inicia autoplay
+    startAutoplay();
 }
