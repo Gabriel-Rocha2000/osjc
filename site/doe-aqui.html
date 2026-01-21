@@ -67,8 +67,8 @@
                         <a href="https://www.facebook.com" target="_blank" rel="noopener" aria-label="Facebook" class="social-icon">
                             <img src="./assets/facebook-icon.svg" alt="Instagram" class="social-icon-img" />
                         </a>
-                        <a href="hhttps://youtube.com" target="_blank" rel="noopener" aria-label="YouTube" class="social-icon">
-                            <img src="./youtube-123.svg" alt="Instagram" class="social-icon-img" />
+                        <a href="https://www.youtube.com" target="_blank" rel="noopener" aria-label="YouTube" class="social-icon">
+                            <img src="./youtube-123.svg" alt="YouTube" class="social-icon-img" />
                         </a>
                     </div>
                     <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema">
@@ -85,7 +85,47 @@
         <section class="donate-hero">
             <div class="donate-hero-content">
                 <h1 class="donate-hero-title">Doe aqui</h1>
-                <p class="donate-hero-text">A Osjc ajuda famílias a saírem da vulnerabilidade social. Sua contribuição é essencial para manter programas de amparo e proteção em todas as fases da vida.</p>
+            </div>
+        </section>
+
+        <!-- Seção de Vídeo e Texto -->
+        <section class="donate-content-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Nossa missão</span>
+                    <h2>AJUDE QUEM TEM FOME</h2>
+                </div>
+                
+                <!-- Vídeo do YouTube -->
+                <div class="donate-video-wrapper">
+                    <div class="video-container">
+                        <iframe 
+                            src="https://www.youtube.com/embed/nJWzHtltPqA" 
+                            title="Ajude quem tem fome - Obras Sociais Jerônimo Candinho" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen
+                            loading="lazy">
+                        </iframe>
+                    </div>
+                </div>
+                
+                <!-- Conteúdo de Texto -->
+                <div class="donate-text-content">
+                    <div class="donate-text">
+                        <p>A desnutrição é responsável por quase metade das mortes de crianças menores de cinco anos em todo o mundo, o que equivale a cerca de 3 milhões de vidas perdidas a cada ano.</p>
+                        
+                        <p>Segundo dados da Organização das Nações Unidas (ONU) para Alimentação e Agricultura (FAO), cerca de 811 milhões de pessoas no mundo passam fome.</p>
+                        
+                        <p>Na <strong>Projeto Ajude quem tem fome</strong>, nosso compromisso com a comunidade é impulsionado por um objetivo primordial: proporcionar esperança e apoio aos mais necessitados. Estamos emocionados em compartilhar a notícia de que, graças ao apoio inestimável de nossos doadores e voluntários, conseguimos ajudar mais de <strong>180 famílias por semana</strong> a terem acesso a alimentos nutritivos e essenciais. Essa conquista é um testemunho do poder transformador do amor e da generosidade.</p>
+                        
+                        <p>Com sua doação, poderemos fornecer ajuda essencial a pessoas em situação de necessidade. Isso pode incluir fornecer alimentos nutritivos para famílias que estão lutando para alimentar seus filhos. Além disso, sua doação também pode ajudar a apoiar nossos programas educacionais, como ajudar no lanche do <strong>Colégio Allan Kardec</strong>, que hoje atende mais de <strong>55 alunos</strong>. Sua doação pode ajudar a mudar o curso da vida de alguém, e é por isso que sua contribuição é tão valiosa.</p>
+                        
+                        <p>Nosso programa de entrega de cestas básicas é uma iniciativa abrangente que visa alcançar o máximo de pessoas possível. Trabalhamos em parceria com organizações locais, empresas e doadores generosos para coletar alimentos e recursos financeiros. Com esses recursos, montamos as cestas básicas.</p>
+                        
+                        <p>Essas cestas básicas são entregues aos <strong>Sábados na própria instituição</strong>, que está localizada na <strong>Quadra 12 – Área reservada número 03 – Sobradinho-DF</strong>.</p>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -136,6 +176,71 @@
                             <img src="assets/superhero-placeholder.png" alt="Super-herói" class="superhero-img" style="display: none;">
                         </div>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Carrossel de Imagens -->
+        <section class="donate-gallery-section">
+            <div class="container">
+                <div class="donate-gallery-header">
+                    <h2 class="donate-gallery-title">Nossos Projetos em Ação</h2>
+                </div>
+                <div class="donate-carousel">
+                    <div class="donate-carousel-track">
+                        <div class="donate-carousel-slide active">
+                            <img src="assets/doe1.png" alt="Projeto 1" class="donate-carousel-image" />
+                        </div>
+                        <div class="donate-carousel-slide">
+                            <img src="assets/doe2.png" alt="Projeto 2" class="donate-carousel-image" />
+                        </div>
+                        <div class="donate-carousel-slide">
+                            <img src="assets/doe3.png" alt="Projeto 3" class="donate-carousel-image" />
+                        </div>
+                        <div class="donate-carousel-slide">
+                            <img src="assets/doe4.png" alt="Projeto 4" class="donate-carousel-image" />
+                        </div>
+                        <div class="donate-carousel-slide">
+                            <img src="assets/doe6.png" alt="Projeto 6" class="donate-carousel-image" />
+                        </div>
+                    </div>
+                    <button class="donate-carousel-prev" aria-label="Anterior">‹</button>
+                    <button class="donate-carousel-next" aria-label="Próximo">›</button>
+                    <div class="donate-carousel-dots">
+                        <span class="donate-carousel-dot active" data-slide="0"></span>
+                        <span class="donate-carousel-dot" data-slide="1"></span>
+                        <span class="donate-carousel-dot" data-slide="2"></span>
+                        <span class="donate-carousel-dot" data-slide="3"></span>
+                        <span class="donate-carousel-dot" data-slide="4"></span>
+                    </div>
+                </div>
+                
+                <!-- Imagem doe5 abaixo do carrossel -->
+                <div class="donate-gallery-extra-image">
+                    <img src="assets/doe5.png" alt="Projeto 5" class="donate-extra-image" />
+                </div>
+
+                <!-- Formulário de E-mail -->
+                <div class="donate-email-form-container">
+                    <h3 class="donate-email-form-title">Receba novidades sobre nossos projetos</h3>
+                    <form class="donate-email-form" id="donateEmailForm">
+                        <div class="donate-email-input-wrapper">
+                            <input 
+                                type="email" 
+                                id="donateEmailInput" 
+                                name="email" 
+                                placeholder="Digite seu e-mail" 
+                                class="donate-email-input" 
+                                required
+                                aria-label="E-mail"
+                            />
+                            <button type="submit" class="donate-email-submit-btn">
+                                <span>Enviar</span>
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                        </div>
+                        <p class="donate-email-form-hint">Enviaremos informações sobre nossos programas e campanhas</p>
+                    </form>
                 </div>
             </div>
         </section>

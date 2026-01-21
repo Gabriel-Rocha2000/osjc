@@ -2317,6 +2317,129 @@ body.dark-mode .recent-posts-cta-content p {
     text-align: center;
 }
 
+/* Estilos específicos para Campanha Amigo que Transforma */
+.program-subtitle {
+    font-size: 1.2rem;
+    color: var(--green-olive);
+    font-weight: 500;
+    margin-bottom: var(--spacing-md);
+    font-style: italic;
+}
+
+.apadrinhamento-section {
+    margin-bottom: var(--spacing-lg);
+    padding-top: var(--spacing-md);
+    border-top: 1px solid var(--green-pale);
+}
+
+.apadrinhamento-section:first-of-type {
+    border-top: none;
+    padding-top: 0;
+}
+
+.apadrinhamento-section h4 {
+    font-size: 1.3rem;
+    color: var(--green-dark);
+    margin-bottom: var(--spacing-sm);
+    font-weight: 600;
+}
+
+.apadrinhamento-section h5 {
+    font-size: 1.1rem;
+    color: var(--green-olive);
+    margin-bottom: var(--spacing-xs);
+    font-weight: 600;
+}
+
+.apadrinhamento-benefits {
+    list-style: none;
+    padding-left: 0;
+    margin: var(--spacing-sm) 0;
+}
+
+.apadrinhamento-benefits li {
+    padding: var(--spacing-xs) 0;
+    padding-left: var(--spacing-md);
+    position: relative;
+    color: var(--text-medium);
+    line-height: 1.6;
+}
+
+.apadrinhamento-benefits li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--green-olive);
+    font-weight: bold;
+}
+
+.apadrinhamento-options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-md);
+    margin: var(--spacing-md) 0;
+}
+
+.apadrinhamento-option {
+    background: var(--green-pale);
+    padding: var(--spacing-md);
+    border-radius: 10px;
+    border: 2px solid var(--green-soft);
+}
+
+.apadrinhamento-option h5 {
+    margin-bottom: var(--spacing-sm);
+    margin-top: 0;
+}
+
+.apadrinhamento-option ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.apadrinhamento-option ul li {
+    padding: var(--spacing-xs) 0;
+    color: var(--text-medium);
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+.apadrinhamento-option ul li strong {
+    color: var(--green-dark);
+    font-weight: 600;
+}
+
+/* Dark mode para apadrinhamento */
+body.dark-mode .apadrinhamento-text .apadrinhamento-section {
+    border-top-color: var(--bg-dark-secondary);
+}
+
+body.dark-mode .apadrinhamento-text .apadrinhamento-section h4 {
+    color: var(--white);
+}
+
+body.dark-mode .apadrinhamento-text .apadrinhamento-section h5 {
+    color: var(--green-olive);
+}
+
+body.dark-mode .apadrinhamento-benefits li {
+    color: var(--text-light);
+}
+
+body.dark-mode .apadrinhamento-option {
+    background: var(--bg-dark-secondary);
+    border-color: var(--green-olive);
+}
+
+body.dark-mode .apadrinhamento-option ul li {
+    color: var(--text-light);
+}
+
+body.dark-mode .apadrinhamento-option ul li strong {
+    color: var(--green-olive);
+}
+
 /* Carrossel dentro de program-item */
 .program-carousel {
     position: relative;
@@ -3420,6 +3543,18 @@ body.dark-mode .recent-posts-cta-content p {
     .program-content h3 {
         font-size: 1.5rem;
     }
+
+    .apadrinhamento-options {
+        grid-template-columns: 1fr;
+    }
+
+    .apadrinhamento-section h4 {
+        font-size: 1.2rem;
+    }
+
+    .apadrinhamento-section h5 {
+        font-size: 1rem;
+    }
     
     .stats-container {
         flex-direction: column;
@@ -3743,6 +3878,31 @@ body.dark-mode .recent-posts-cta-content p {
     
     .program-content h3 {
         font-size: 1.2rem;
+    }
+
+    .program-subtitle {
+        font-size: 1rem;
+    }
+
+    .apadrinhamento-options {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-sm);
+    }
+
+    .apadrinhamento-option {
+        padding: var(--spacing-sm);
+    }
+
+    .apadrinhamento-section h4 {
+        font-size: 1.1rem;
+    }
+
+    .apadrinhamento-section h5 {
+        font-size: 0.95rem;
+    }
+
+    .apadrinhamento-option ul li {
+        font-size: 0.9rem;
     }
     
     .program-item {
@@ -4935,6 +5095,31 @@ textarea.form-control {
 
 .apadrinhamento-text p:last-child {
     margin-bottom: 0;
+}
+
+.apadrinhamento-text .apadrinhamento-section {
+    margin-bottom: var(--spacing-lg);
+    padding-top: var(--spacing-md);
+    border-top: 1px solid var(--green-soft);
+}
+
+.apadrinhamento-text .apadrinhamento-section:first-of-type {
+    border-top: none;
+    padding-top: 0;
+}
+
+.apadrinhamento-text .apadrinhamento-section h4 {
+    font-size: 1.3rem;
+    color: var(--green-dark);
+    margin-bottom: var(--spacing-sm);
+    font-weight: 600;
+}
+
+.apadrinhamento-text .apadrinhamento-section h5 {
+    font-size: 1.1rem;
+    color: var(--green-olive);
+    margin-bottom: var(--spacing-xs);
+    font-weight: 600;
 }
 
 .apadrinhamento-intro {
