@@ -2,7 +2,7 @@
 
 /* Seção de Conteúdo (Vídeo e Texto) */
 .donate-content-section {
-    background: var(--white);
+    background: transparent;
     padding: var(--spacing-xl) 0;
     position: relative;
     z-index: 2;
@@ -24,7 +24,7 @@
 /* Container do Vídeo */
 .donate-video-wrapper {
     max-width: 900px;
-    margin: 0 auto var(--spacing-xl);
+    margin: 0 auto var(--spacing-md);
     position: relative;
 }
 
@@ -50,21 +50,22 @@
 
 /* Conteúdo de Texto */
 .donate-text-content {
-    max-width: 900px;
+    max-width: 1200px;
+    width: 85%;
     margin: 0 auto;
 }
 
 .donate-text {
-    background: var(--green-pale);
+    background: transparent;
     padding: var(--spacing-xl);
-    border-radius: 20px;
-    box-shadow: 0 4px 20px rgba(45, 80, 22, 0.08);
+    border-radius: 0;
+    box-shadow: none;
     line-height: 1.8;
 }
 
 .donate-text p {
     color: var(--text-medium);
-    font-size: 1.1rem;
+    font-size: 1.9305rem;
     margin-bottom: var(--spacing-md);
     text-align: justify;
 }
@@ -84,7 +85,7 @@
     padding: var(--spacing-xl) 0;
     position: relative;
     overflow: hidden;
-    min-height: 400px;
+    min-height: 200px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -145,31 +146,42 @@
 .donate-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 1fr;
     gap: var(--spacing-xl);
-    align-items: start;
+    align-items: stretch;
 }
 
 /* Lado Esquerdo - Dados Bancários */
 .donate-text-side {
-    background: var(--white);
-    padding: var(--spacing-xl);
+    background: transparent;
+    padding: 0;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 500px;
+    flex-direction: column;
+    justify-content: stretch;
+    align-items: stretch;
+    height: 100%;
+    border-radius: 0;
+    position: relative;
+    box-sizing: border-box;
 }
 
 .bank-data-container {
     width: 100%;
-    max-width: 600px;
+    height: 100%;
+    min-height: 100%;
     background: var(--green-pale);
     border: 2px solid var(--green-olive);
-    border-radius: 15px;
-    padding: var(--spacing-lg);
+    border-radius: 20px;
+    padding: var(--spacing-xl);
     cursor: pointer;
     transition: var(--transition-smooth);
     position: relative;
+    z-index: 2;
     box-shadow: 0 4px 15px rgba(85, 107, 47, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
 }
 
 .bank-data-container:hover {
@@ -185,19 +197,23 @@
 }
 
 .bank-data-title {
-    font-size: clamp(1.5rem, 4vw, 2rem);
-    font-weight: 700;
+    font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+    font-weight: 600;
     color: var(--green-dark);
-    margin-bottom: var(--spacing-md);
-    text-align: center;
+    margin-bottom: var(--spacing-lg);
+    text-align: left;
     line-height: 1.3;
+    padding: 0;
 }
 
 .bank-data-content {
     display: flex;
     flex-direction: column;
     gap: var(--spacing-sm);
-    margin-bottom: var(--spacing-md);
+    margin-bottom: 0;
+    padding: 0;
+    flex: 1;
+    justify-content: center;
 }
 
 .bank-data-line {
@@ -219,6 +235,7 @@
     color: var(--green-olive);
     font-size: 0.9rem;
     font-weight: 600;
+    padding: 0;
     padding-top: var(--spacing-sm);
     border-top: 1px solid var(--green-soft);
     display: flex;
@@ -233,7 +250,7 @@
 }
 
 .bank-data-copy-hint i {
-    font-size: 1rem;
+    font-size: 1.3rem;
 }
 
 /* Lado Direito - Formulário de Doação */
@@ -242,10 +259,12 @@
     padding: var(--spacing-xl);
     border-radius: 20px;
     position: relative;
-    min-height: 500px;
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    box-sizing: border-box;
 }
 
 .donate-form-container {
@@ -436,7 +455,7 @@
     }
     
     .donate-video-wrapper {
-        margin-bottom: var(--spacing-lg);
+        margin-bottom: var(--spacing-md);
     }
     
     .donate-text {
@@ -458,7 +477,7 @@
     }
     
     .donate-video-wrapper {
-        margin-bottom: var(--spacing-md);
+        margin-bottom: var(--spacing-sm);
     }
     
     .donate-text {
@@ -466,7 +485,7 @@
     }
     
     .donate-text p {
-        font-size: 1rem;
+        font-size: 1.755rem;
         text-align: left;
     }
 }
@@ -477,7 +496,7 @@
     }
     
     .donate-text p {
-        font-size: 0.95rem;
+        font-size: 1.66725rem;
     }
 }
 
@@ -493,8 +512,11 @@
     }
     
     .donate-text-side {
-        min-height: auto;
-        padding: var(--spacing-lg);
+        height: auto;
+    }
+    
+    .bank-data-container {
+        width: 100%;
     }
     
     .donate-form-side {
@@ -522,7 +544,7 @@
     }
     
     .donate-hero {
-        min-height: 300px;
+        min-height: 150px;
         padding: var(--spacing-lg) 0;
     }
     
@@ -550,17 +572,16 @@
     }
     
     .donate-text-side {
-        padding: var(--spacing-md);
-        text-align: center;
+        height: auto;
     }
     
     .bank-data-container {
-        max-width: 100%;
+        width: 100%;
         padding: var(--spacing-md);
     }
     
     .bank-data-title {
-        font-size: clamp(1.3rem, 5vw, 1.8rem);
+        font-size: clamp(1.69rem, 6.5vw, 2.34rem);
         margin-bottom: var(--spacing-sm);
     }
     
@@ -569,12 +590,12 @@
     }
     
     .bank-data-line {
-        font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+        font-size: clamp(1.235rem, 3.25vw, 1.43rem);
         padding: 6px 0;
     }
     
     .bank-data-copy-hint {
-        font-size: 0.85rem;
+        font-size: 1.105rem;
         padding-top: var(--spacing-xs);
     }
     
@@ -642,7 +663,7 @@
     }
     
     .donate-hero {
-        min-height: 250px;
+        min-height: 125px;
         padding: var(--spacing-md) 0;
     }
     
@@ -668,15 +689,16 @@
     }
     
     .donate-text-side {
-        padding: var(--spacing-sm);
+        height: auto;
     }
     
     .bank-data-container {
+        width: 100%;
         padding: var(--spacing-sm);
     }
     
     .bank-data-title {
-        font-size: clamp(1.2rem, 6vw, 1.5rem);
+        font-size: clamp(1.56rem, 7.8vw, 1.95rem);
         margin-bottom: var(--spacing-sm);
     }
     
@@ -685,12 +707,12 @@
     }
     
     .bank-data-line {
-        font-size: clamp(0.9rem, 3vw, 1rem);
+        font-size: clamp(1.17rem, 3.9vw, 1.3rem);
         padding: 5px 0;
     }
     
     .bank-data-copy-hint {
-        font-size: 0.8rem;
+        font-size: 1.04rem;
         padding-top: 8px;
     }
     
@@ -706,7 +728,7 @@
     
     .donate-amount-btn {
         padding: 12px 8px;
-        font-size: 0.95rem;
+        font-size: 1.2825rem;
         min-height: 45px;
     }
     
@@ -730,7 +752,7 @@
     }
     
     .donate-hero {
-        min-height: 200px;
+        min-height: 100px;
         padding: var(--spacing-sm) 0;
     }
     
@@ -758,15 +780,16 @@
     }
     
     .donate-text-side {
-        padding: 20px 15px;
+        height: auto;
     }
     
     .bank-data-container {
-        padding: 15px 12px;
+        width: 100%;
+        padding: 15px;
     }
     
     .bank-data-title {
-        font-size: clamp(1.1rem, 7vw, 1.3rem);
+        font-size: clamp(1.43rem, 9.1vw, 1.69rem);
         margin-bottom: 12px;
     }
     
@@ -775,12 +798,12 @@
     }
     
     .bank-data-line {
-        font-size: 0.9rem;
+        font-size: 1.17rem;
         padding: 4px 0;
     }
     
     .bank-data-copy-hint {
-        font-size: 0.75rem;
+        font-size: 0.975rem;
         padding-top: 8px;
     }
     
@@ -867,11 +890,11 @@
     }
     
     .bank-data-title {
-        font-size: 1.1rem;
+        font-size: 1.43rem;
     }
     
     .bank-data-value {
-        font-size: 0.95rem;
+        font-size: 1.235rem;
     }
     
     .donate-form-side {
@@ -881,7 +904,7 @@
     .donate-amount-btn,
     .donate-basket-btn,
     .donate-submit-btn {
-        font-size: 0.95rem;
+        font-size: 1.2825rem;
         padding: 12px 10px;
     }
 }
@@ -889,87 +912,218 @@
 /* Seção de Galeria - Doe Aqui */
 .donate-gallery-section {
     padding: var(--spacing-xl) 0;
-    background: var(--white);
+    background: transparent;
     position: relative;
+}
+
+/* Imagem destacada acima do título */
+.donate-gallery-featured {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.donate-gallery-featured-image {
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    transform: scale(1.3);
+    transition: var(--transition-smooth);
+}
+
+.donate-gallery-featured-image:hover {
+    transform: scale(1.32);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
 }
 
 .donate-gallery-header {
     text-align: center;
     margin-bottom: var(--spacing-lg);
+    background: transparent;
+    padding: 0;
+    width: 65%;
+    max-width: 65%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .donate-gallery-title {
-    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    font-size: clamp(2.5rem, 6vw, 4rem);
     color: var(--green-dark);
     margin: 0;
     font-weight: 600;
+    line-height: 1.2;
+    width: 100%;
 }
 
-/* Carrossel de Doações */
-.donate-carousel {
-    position: relative;
-    width: 100%;
+/* Grade de Imagens */
+.donate-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
     max-width: 1200px;
     margin: 0 auto;
-    min-height: 500px;
-    max-height: 600px;
-    overflow: hidden;
-    border-radius: 20px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-    background: var(--green-pale);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    padding: var(--spacing-md);
 }
 
-.donate-carousel-track {
+.donate-gallery-item {
     position: relative;
-    width: 100%;
-    height: 100%;
+    overflow: visible;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    background: transparent;
+    transition: var(--transition-smooth);
+    aspect-ratio: 4 / 3;
+    transform: scale(1.1);
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.donate-carousel-slide {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    transition: opacity 0.6s ease;
+.donate-gallery-item:hover {
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.donate-gallery-image {
+    width: 90%;
+    height: 90%;
+    object-fit: contain;
+    display: block;
+    border-radius: 20px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.donate-gallery-item:hover .donate-gallery-image {
+    transform: scale(1.05);
+}
+
+/* Container Formulário e Imagem lado a lado */
+.donate-contact-section-title {
+    font-size: clamp(2rem, 5vw, 3rem);
+    color: var(--green-dark);
+    font-weight: 600;
+    text-align: center;
+    margin: var(--spacing-xl) auto var(--spacing-lg);
+    max-width: 1200px;
+    padding: 0 var(--spacing-md);
+    line-height: 1.2;
+}
+
+.donate-form-image-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-xl);
+    margin-top: var(--spacing-lg);
+    align-items: stretch;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 var(--spacing-md);
+}
+
+/* Formulário de Contato */
+.donate-contact-form-wrapper {
+    padding: var(--spacing-lg);
+    background: transparent;
     display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: center;
-    padding: 20px;
+    height: 100%;
+}
+
+.donate-contact-form-title {
+    font-size: clamp(1.3rem, 3vw, 1.6rem);
+    color: var(--green-dark);
+    text-align: left;
+    margin-bottom: var(--spacing-md);
+    font-weight: 600;
+}
+
+.donate-contact-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    flex: 1;
+    justify-content: center;
+}
+
+.donate-form-field {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+    flex: 0 0 auto;
+}
+
+.donate-form-field label {
+    font-size: 0.9rem;
+    color: var(--green-dark);
+    font-weight: 600;
+}
+
+.donate-contact-input {
+    width: 100%;
+    padding: var(--spacing-sm) var(--spacing-md);
+    border: 2px solid var(--green-olive);
+    border-radius: 10px;
+    font-size: 0.95rem;
+    color: var(--text-dark);
+    background: var(--white);
+    outline: none;
+    transition: var(--transition-smooth);
     box-sizing: border-box;
 }
 
-.donate-carousel-slide.active {
-    opacity: 1;
-    position: relative;
+.donate-contact-input:focus {
+    border-color: var(--green-medium);
+    box-shadow: 0 0 0 3px rgba(85, 107, 47, 0.1);
 }
 
-.donate-carousel-slide img {
-    max-width: 100%;
-    max-height: 100%;
-    width: auto;
-    height: auto;
-    object-fit: contain;
-    display: block;
-    border-radius: 15px;
+.donate-contact-input::placeholder {
+    color: var(--text-medium);
+}
+
+.donate-contact-submit-btn {
+    padding: var(--spacing-sm) var(--spacing-lg);
+    background: var(--green-olive);
+    color: var(--white);
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 600;
     cursor: pointer;
-    transition: transform 0.2s;
+    transition: var(--transition-smooth);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-xs);
+    flex: 0 0 auto;
 }
 
-.donate-carousel-slide img:hover {
-    transform: scale(1.02);
+.donate-contact-submit-btn:hover {
+    background: var(--green-medium);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(85, 107, 47, 0.3);
 }
 
-/* Imagem extra abaixo do carrossel */
+.donate-contact-submit-btn:active {
+    transform: translateY(0);
+}
+
+.donate-contact-submit-btn i {
+    font-size: 0.9rem;
+}
+
+/* Imagem doe5 à direita */
 .donate-gallery-extra-image {
-    margin-top: var(--spacing-xl);
     text-align: center;
     display: flex;
     align-items: center;
@@ -979,7 +1133,7 @@
 
 .donate-extra-image {
     max-width: 100%;
-    max-height: 400px;
+    max-height: 500px;
     width: auto;
     height: auto;
     object-fit: contain;
@@ -987,71 +1141,6 @@
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-.donate-carousel-prev,
-.donate-carousel-next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(255, 255, 255, 0.9);
-    border: 2px solid var(--green-olive);
-    color: var(--green-dark);
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    font-size: 2rem;
-    font-weight: bold;
-    cursor: pointer;
-    z-index: 10;
-    transition: var(--transition-smooth);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: none;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-}
-
-.donate-carousel-prev:hover,
-.donate-carousel-next:hover {
-    background: var(--green-olive);
-    color: var(--white);
-    transform: translateY(-50%) scale(1.1);
-    box-shadow: 0 6px 20px rgba(85, 107, 47, 0.3);
-}
-
-.donate-carousel-prev {
-    left: 15px;
-}
-
-.donate-carousel-next {
-    right: 15px;
-}
-
-.donate-carousel-dots {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 10px;
-    z-index: 10;
-}
-
-.donate-carousel-dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.5);
-    border: 2px solid rgba(255, 255, 255, 0.8);
-    cursor: pointer;
-    transition: var(--transition-smooth);
-}
-
-.donate-carousel-dot.active,
-.donate-carousel-dot:hover {
-    background: var(--white);
-    border-color: var(--white);
-    transform: scale(1.2);
-}
 
 /* Dark Mode */
 body.dark-mode .donate-gallery-section {
@@ -1062,13 +1151,44 @@ body.dark-mode .donate-gallery-title {
     color: var(--white);
 }
 
-body.dark-mode .donate-carousel {
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+body.dark-mode .donate-gallery-featured-image {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+body.dark-mode .donate-gallery-featured-image:hover {
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.5);
+}
+
+body.dark-mode .donate-gallery-item {
     background: var(--bg-dark-secondary);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .donate-gallery-item:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
 }
 
 body.dark-mode .donate-extra-image {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .donate-contact-form-title {
+    color: var(--white);
+}
+
+body.dark-mode .donate-form-field label {
+    color: var(--white);
+}
+
+body.dark-mode .donate-contact-input {
+    background: var(--bg-dark-secondary);
+    border-color: var(--green-olive);
+    color: var(--white);
+}
+
+body.dark-mode .donate-contact-input:focus {
+    border-color: var(--green-medium);
+    background: var(--bg-dark);
 }
 
 /* Formulário de E-mail */
@@ -1188,43 +1308,67 @@ body.dark-mode .donate-email-form-hint {
     .donate-gallery-section {
         padding: var(--spacing-lg) 0;
     }
-
-    .donate-carousel {
-        min-height: 450px;
-        max-height: 550px;
+    
+    .donate-gallery-featured {
+        margin-bottom: var(--spacing-lg);
+    }
+    
+    .donate-gallery-featured-image {
+        transform: scale(1.2);
+        max-width: 90%;
+    }
+    
+    .donate-gallery-featured-image:hover {
+        transform: scale(1.22);
     }
 
-    .donate-carousel-slide {
-        padding: 15px;
+    .donate-gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: var(--spacing-md);
+        padding: var(--spacing-sm);
     }
 
+    .donate-contact-section-title {
+        font-size: clamp(1.8rem, 6vw, 2.5rem);
+        margin: var(--spacing-lg) auto var(--spacing-md);
+        padding: 0 var(--spacing-md);
+    }
+
+    .donate-form-image-container {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+        padding: 0 var(--spacing-md);
+    }
+    
+    .donate-contact-form-wrapper {
+        padding: var(--spacing-md);
+    }
+    
     .donate-gallery-extra-image {
-        margin-top: var(--spacing-lg);
         padding: 15px;
     }
 
     .donate-extra-image {
-        max-height: 350px;
-    }
-
-    .donate-email-form-container {
-        margin-top: var(--spacing-lg);
-        padding: var(--spacing-md);
-    }
-
-    .donate-email-input-wrapper {
-        flex-direction: column;
-    }
-
-    .donate-email-submit-btn {
-        width: 100%;
-        justify-content: center;
+        max-height: 400px;
     }
 }
 
 @media (max-width: 768px) {
     .donate-gallery-section {
         padding: var(--spacing-md) 0;
+    }
+    
+    .donate-gallery-featured {
+        margin-bottom: var(--spacing-md);
+    }
+    
+    .donate-gallery-featured-image {
+        transform: scale(1.15);
+        max-width: 95%;
+    }
+    
+    .donate-gallery-featured-image:hover {
+        transform: scale(1.17);
     }
 
     .donate-gallery-header {
@@ -1235,58 +1379,35 @@ body.dark-mode .donate-email-form-hint {
         font-size: clamp(1.5rem, 5vw, 2rem);
     }
 
-    .donate-carousel {
-        min-height: 350px;
-        max-height: 450px;
-        border-radius: 15px;
+    .donate-gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: var(--spacing-sm);
+        padding: var(--spacing-xs);
     }
 
-    .donate-carousel-slide {
-        padding: 15px;
+    .donate-contact-section-title {
+        font-size: clamp(1.6rem, 7vw, 2.2rem);
+        margin: var(--spacing-md) auto var(--spacing-sm);
+        padding: 0 var(--spacing-sm);
     }
 
-    .donate-carousel-slide img {
-        border-radius: 12px;
+    .donate-form-image-container {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+        padding: 0 var(--spacing-sm);
     }
-
-    .donate-carousel-prev,
-    .donate-carousel-next {
-        width: 40px;
-        height: 40px;
-        font-size: 1.5rem;
+    
+    .donate-contact-form-wrapper {
+        padding: var(--spacing-md);
     }
-
-    .donate-carousel-prev {
-        left: 10px;
-    }
-
-    .donate-carousel-next {
-        right: 10px;
-    }
-
-    .donate-carousel-dots {
-        bottom: 15px;
-        gap: 8px;
-    }
-
-    .donate-carousel-dot {
-        width: 10px;
-        height: 10px;
-    }
-
+    
     .donate-gallery-extra-image {
-        margin-top: var(--spacing-md);
         padding: 15px;
     }
 
     .donate-extra-image {
-        max-height: 280px;
+        max-height: 350px;
         border-radius: 12px;
-    }
-
-    .donate-email-form-container {
-        margin-top: var(--spacing-md);
-        padding: var(--spacing-md);
     }
 
     .donate-email-form-title {
@@ -1295,12 +1416,12 @@ body.dark-mode .donate-email-form-hint {
     }
 
     .donate-email-input {
-        font-size: 0.95rem;
+        font-size: 1.2825rem;
         padding: var(--spacing-sm) var(--spacing-md);
     }
 
     .donate-email-submit-btn {
-        font-size: 0.95rem;
+        font-size: 1.2825rem;
         padding: var(--spacing-sm) var(--spacing-md);
     }
 
@@ -1310,35 +1431,23 @@ body.dark-mode .donate-email-form-hint {
 }
 
 @media (max-width: 480px) {
-    .donate-carousel {
-        min-height: 280px;
-        max-height: 350px;
-        border-radius: 12px;
+    .donate-gallery-featured {
+        margin-bottom: var(--spacing-md);
     }
-
-    .donate-carousel-slide {
-        padding: 10px;
+    
+    .donate-gallery-featured-image {
+        transform: scale(1.1);
+        max-width: 100%;
     }
-
-    .donate-carousel-slide img {
-        border-radius: 10px;
+    
+    .donate-gallery-featured-image:hover {
+        transform: scale(1.12);
     }
-
-    .donate-carousel-prev,
-    .donate-carousel-next {
-        width: 35px;
-        height: 35px;
-        font-size: 1.3rem;
-    }
-
-    .donate-carousel-dots {
-        bottom: 12px;
-        gap: 6px;
-    }
-
-    .donate-carousel-dot {
-        width: 8px;
-        height: 8px;
+    
+    .donate-gallery-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-sm);
+        padding: var(--spacing-xs);
     }
 
     .donate-gallery-extra-image {

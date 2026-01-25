@@ -162,99 +162,37 @@ FAVORECIDO: OBRAS SOCIAIS C E F J CANDINHO`;
     }
 
     // Inicializar carrossel de imagens na página Doe Aqui
-    initDonateCarousel();
+    // Carrossel substituído por grade de imagens
 
-    // Inicializar formulário de e-mail
-    initDonateEmailForm();
+    // Inicializar formulário de contato
+    initDonateContactForm();
 });
 
-// Função para inicializar carrossel de imagens na página Doe Aqui
-function initDonateCarousel() {
-    const carousel = document.querySelector('.donate-carousel');
-    if (!carousel) return;
-    
-    const slides = carousel.querySelectorAll('.donate-carousel-slide');
-    const dots = carousel.querySelectorAll('.donate-carousel-dot');
-    const prevBtn = carousel.querySelector('.donate-carousel-prev');
-    const nextBtn = carousel.querySelector('.donate-carousel-next');
-    
-    if (slides.length === 0) return;
-    
-    let currentSlide = 0;
-    let autoplayInterval;
-    
-    // Função para mostrar slide específico
-    function showSlide(index) {
-        slides.forEach(slide => slide.classList.remove('active'));
-        dots.forEach(dot => dot.classList.remove('active'));
-        
-        if (slides[index]) {
-            slides[index].classList.add('active');
-        }
-        if (dots[index]) {
-            dots[index].classList.add('active');
-        }
-        
-        currentSlide = index;
-    }
-    
-    // Próximo slide
-    function nextSlide() {
-        const next = (currentSlide + 1) % slides.length;
-        showSlide(next);
-    }
-    
-    // Slide anterior
-    function prevSlide() {
-        const prev = (currentSlide - 1 + slides.length) % slides.length;
-        showSlide(prev);
-    }
-    
-    // Botão próximo
-    if (nextBtn) {
-        nextBtn.addEventListener('click', nextSlide);
-    }
-    
-    // Botão anterior
-    if (prevBtn) {
-        prevBtn.addEventListener('click', prevSlide);
-    }
-    
-    // Dots de navegação
-    dots.forEach((dot, index) => {
-        dot.addEventListener('click', () => {
-            showSlide(index);
-        });
-    });
-    
-    // Autoplay
-    function startAutoplay() {
-        autoplayInterval = setInterval(nextSlide, 5000);
-    }
-    
-    // Pausar autoplay no hover
-    carousel.addEventListener('mouseenter', () => {
-        clearInterval(autoplayInterval);
-    });
-    
-    carousel.addEventListener('mouseleave', () => {
-        startAutoplay();
-    });
-    
-    // Inicia autoplay
-    startAutoplay();
-}
+// Função do carrossel removida - substituído por grade de imagens
+// function initDonateCarousel() { ... }
 
-// Função para inicializar formulário de e-mail
-function initDonateEmailForm() {
-    const emailForm = document.getElementById('donateEmailForm');
-    if (!emailForm) return;
+// Função para inicializar formulário de contato
+function initDonateContactForm() {
+    const contactForm = document.getElementById('donateContactForm');
+    if (!contactForm) return;
 
-    emailForm.addEventListener('submit', function(e) {
+    contactForm.addEventListener('submit', function(e) {
         e.preventDefault();
         
-        const emailInput = document.getElementById('donateEmailInput');
+        const nameInput = document.getElementById('donateContactName');
+        const emailInput = document.getElementById('donateContactEmail');
+        const phoneInput = document.getElementById('donateContactPhone');
+        
+        const name = nameInput.value.trim();
         const email = emailInput.value.trim();
+        const phone = phoneInput.value.trim();
+        
+        // Validação
+        if (!name) {
+            alert('Por favor, digite seu nome.');
+            nameInput.focus();
+            return;
+        }
         
         if (!email) {
             alert('Por favor, digite um e-mail válido.');
@@ -270,18 +208,26 @@ function initDonateEmailForm() {
             return;
         }
         
-        // Aqui você pode adicionar a lógica para enviar o e-mail
+        if (!phone) {
+            alert('Por favor, digite seu telefone.');
+            phoneInput.focus();
+            return;
+        }
+        
+        // Aqui você pode adicionar a lógica para enviar os dados
         // Por exemplo, fazer uma requisição AJAX para um servidor
         
         // Feedback visual
-        const submitBtn = emailForm.querySelector('.donate-email-submit-btn');
+        const submitBtn = contactForm.querySelector('.donate-contact-submit-btn');
         const originalText = submitBtn.innerHTML;
         submitBtn.innerHTML = '<i class="fa-solid fa-check"></i> Enviado!';
         submitBtn.style.background = 'var(--green-medium)';
         submitBtn.disabled = true;
         
-        // Limpar campo
+        // Limpar campos
+        nameInput.value = '';
         emailInput.value = '';
+        phoneInput.value = '';
         
         // Restaurar botão após 3 segundos
         setTimeout(() => {
@@ -290,7 +236,7 @@ function initDonateEmailForm() {
             submitBtn.disabled = false;
         }, 3000);
         
-        console.log('E-mail cadastrado:', email);
+        console.log('Formulário enviado:', { name, email, phone });
         // Aqui você pode adicionar código para enviar os dados para um servidor
     });
 }

@@ -410,12 +410,15 @@ body.dark-mode .recent-posts-cta-content p {
 }
 
 .site-title {
-    font-size: 1.5rem;
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
     font-weight: 800;
     color: var(--text-dark);
-    line-height: 1.4;
+    line-height: 1.2;
     white-space: nowrap;
     text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
 }
 
 .site-title a {
@@ -672,7 +675,7 @@ body.dark-mode .recent-posts-cta-content p {
 }
 
 .hero-content-below {
-    padding: var(--spacing-xl) var(--spacing-lg);
+    padding: var(--spacing-lg) var(--spacing-lg) var(--spacing-md) var(--spacing-lg);
     background: var(--white);
     text-align: center;
 }
@@ -1052,7 +1055,7 @@ body.dark-mode .recent-posts-cta-content p {
 /* Statistics Section Serena */
 .stats-section {
     background: var(--white);
-    padding: var(--spacing-xl) 0;
+    padding: var(--spacing-lg) 0;
     position: relative;
 }
 
@@ -1586,7 +1589,7 @@ body.dark-mode .recent-posts-cta-content p {
 /* Seção de Selos */
 .badges-section {
     background: var(--white);
-    padding: var(--spacing-xl) 0;
+    padding: var(--spacing-lg) 0;
     position: relative;
     z-index: 2;
 }
@@ -2048,7 +2051,7 @@ body.dark-mode .recent-posts-cta-content p {
 /* Seção Missão, Visão e Valores */
 .mission-section {
     background: var(--white);
-    padding: var(--spacing-xl) 0;
+    padding: var(--spacing-lg) 0;
     position: relative;
     z-index: 2;
 }
@@ -2129,7 +2132,7 @@ body.dark-mode .recent-posts-cta-content p {
 /* Seção de Depoimentos */
 .testimonials-section {
     background: var(--white);
-    padding: var(--spacing-xl) 0;
+    padding: var(--spacing-md) 0 var(--spacing-lg) 0;
     position: relative;
     z-index: 2;
 }
@@ -2207,7 +2210,7 @@ body.dark-mode .recent-posts-cta-content p {
 /* Seção de Programas */
 .programs-section {
     background: var(--green-pale);
-    padding: var(--spacing-xl) 0;
+    padding: var(--spacing-lg) 0;
     position: relative;
     z-index: 2;
 }
@@ -2622,7 +2625,7 @@ body.dark-mode .apadrinhamento-option ul li strong {
 /* Seção de Parceiros */
 .partners-section {
     background: var(--white);
-    padding: var(--spacing-xl) 0;
+    padding: var(--spacing-lg) 0;
     position: relative;
     z-index: 2;
 }
@@ -2693,7 +2696,7 @@ body.dark-mode .apadrinhamento-option ul li strong {
 /* Seção de Notícias */
 .news-section {
     background: var(--white);
-    padding: var(--spacing-xl) 0;
+    padding: var(--spacing-lg) 0;
     position: relative;
     z-index: 2;
 }
@@ -3068,6 +3071,9 @@ body.dark-mode .apadrinhamento-option ul li strong {
         max-width: 100%;
         text-align: center;
         white-space: nowrap;
+        font-size: clamp(0.9rem, 2.5vw, 1.3rem);
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
     
     /* Elementos decorativos */
@@ -3111,7 +3117,7 @@ body.dark-mode .apadrinhamento-option ul li strong {
     }
     
     .hero-content-below {
-        padding: var(--spacing-lg) var(--spacing-md);
+        padding: var(--spacing-md) var(--spacing-md) var(--spacing-sm) var(--spacing-md);
     }
     
     .hero-features {
@@ -3428,7 +3434,10 @@ body.dark-mode .apadrinhamento-option ul li strong {
     .site-title {
         max-width: 100%;
         text-align: center;
-        font-size: 2.4rem;
+        font-size: clamp(0.85rem, 2.5vw, 1.2rem);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
     
     .donate-button {
@@ -3464,7 +3473,7 @@ body.dark-mode .apadrinhamento-option ul li strong {
     }
     
     .hero-content-below {
-        padding: var(--spacing-md) var(--spacing-sm);
+        padding: var(--spacing-sm) var(--spacing-sm) var(--spacing-xs) var(--spacing-sm);
     }
     
     .hero-content-below h1 {
@@ -3512,8 +3521,9 @@ body.dark-mode .apadrinhamento-option ul li strong {
     .programs-section,
     .stats-section,
     .news-section,
-    .badges-section {
-        padding: var(--spacing-lg) 0;
+    .badges-section,
+    .mission-section {
+        padding: var(--spacing-md) 0;
     }
     
     .testimonials-grid {
@@ -3758,10 +3768,12 @@ body.dark-mode .apadrinhamento-option ul li strong {
     }
     
     .site-title {
-        font-size: 2.4rem;
+        font-size: clamp(0.8rem, 2.5vw, 1.1rem);
         max-width: 100%;
         text-align: center;
         white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
     
     .social-icon {
@@ -3796,7 +3808,7 @@ body.dark-mode .apadrinhamento-option ul li strong {
     }
     
     .hero-content-below {
-        padding: var(--spacing-sm);
+        padding: var(--spacing-xs) var(--spacing-sm) var(--spacing-xs) var(--spacing-sm);
     }
     
     .hero-content-below h1 {
@@ -3860,8 +3872,9 @@ body.dark-mode .apadrinhamento-option ul li strong {
     .programs-section,
     .stats-section,
     .news-section,
-    .badges-section {
-        padding: var(--spacing-md) 0;
+    .badges-section,
+    .mission-section {
+        padding: var(--spacing-sm) 0;
     }
     
     .testimonial-card {
