@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posts - Página 3 - Obras Sociais do Centro Espírita Fraternidade Jerônimo Candinho</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="site-header" id="siteHeader">
+        <div class="container">
+            <div class="header-top">
+                <div class="header-left">
+                    <div class="logo-circle">
+                        <img src="LOGO-JERONIMO-NEW-1-90x90.png" alt="Logo Jerônimo Candinho" />
+                    </div>
+                    <h1 class="site-title"><a href="index.html">Obras Sociais C.E.F. Jerônimo Candinho</a></h1>
+                </div>
+            </div>
+            <div class="header-bottom">
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="index.html" class="nav-link">Home</a></li>
+                        <li><a href="quem-somos.html" class="nav-link">Quem Somos</a></li>
+                        <li><a href="posts.html" class="nav-link">Programas</a></li>
+                        <li><a href="pages.html" class="nav-link">Vagas</a></li>
+                        <li><a href="posts.html" class="nav-link">Blog</a></li>
+                        <li><a href="pages/todas/transparencia.html" class="nav-link">Transparência</a></li>
+                        <li><a href="pages/todas/contato.html" class="nav-link">Contato</a></li>
+                    </ul>
+                </nav>
+                <div class="header-actions">
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/jeronimocandinho.osjc?igsh=NHlmb3NxN2p0ODh1" target="_blank" rel="noopener" aria-label="Instagram" class="social-icon">
+                            <img src="./assets/instagram-icon.svg" alt="Instagram" class="social-icon-img" />
+                        </a>
+                        <a href="https://www.facebook.com" target="_blank" rel="noopener" aria-label="Facebook" class="social-icon">
+                            <img src="./assets/facebook-icon.svg" alt="Facebook" class="social-icon-img" />
+                        </a>
+                        <a href="https://youtube.com" target="_blank" rel="noopener" aria-label="YouTube" class="social-icon">
+                            <img src="./youtube-123.svg" alt="YouTube" class="social-icon-img" />
+                        </a>
+                    </div>
+                    <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema">
+                        <span class="theme-icon">🌙</span>
+                    </button>
+                    <a href="doe-aqui.html" class="donate-button"><img src="./heart-icon.png" alt="Coração" class="donate-heart-icon"> Doe aqui</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <main class="main-content">
+        <!-- Carrossel de Programas -->
+        <section class="hero">
+            <div class="hero-right" style="flex: 1; padding: 0;">
+                <div class="hero-carousel hero-carousel-fullwidth" id="programsCarousel">
+                    <div class="hero-carousel-track">
+                        <div class="hero-carousel-slide active">
+                            <img src="hero-poster.jpg" alt="Programas e Projetos" class="hero-carousel-image" />
+                        </div>
+                        <div class="hero-carousel-slide">
+                            <img src="hero-poster.jpg" alt="Jovem Aprendiz" class="hero-carousel-image" />
+                        </div>
+                        <div class="hero-carousel-slide">
+                            <img src="hero-poster.jpg" alt="Qualificação Profissional" class="hero-carousel-image" />
+                        </div>
+                        <div class="hero-carousel-slide">
+                            <img src="hero-poster.jpg" alt="Educandário Espírita" class="hero-carousel-image" />
+                        </div>
+                    </div>
+                    <button class="hero-nav-arrow hero-nav-prev" aria-label="Anterior">‹</button>
+                    <button class="hero-nav-arrow hero-nav-next" aria-label="Próximo">›</button>
+                    <div class="hero-carousel-dots">
+                        <span class="carousel-dot active" data-slide="0"></span>
+                        <span class="carousel-dot" data-slide="1"></span>
+                        <span class="carousel-dot" data-slide="2"></span>
+                        <span class="carousel-dot" data-slide="3"></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Programas -->
+        <section class="programs-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Nossos Programas</span>
+                    <h2>Programas e Projetos Sociais</h2>
+                    <p style="max-width: 800px; margin: var(--spacing-md) auto 0; color: var(--text-medium); font-size: 1.1rem; line-height: 1.8;">
+                        Conheça os programas e projetos que desenvolvemos para transformar vidas e fortalecer nossa comunidade.
+                    </p>
+                </div>
+                
+                <!-- Sistema de Filtros -->
+                <div class="posts-filters">
+                    <div class="filters-header">
+                        <h3>Filtrar por:</h3>
+                        <button class="filter-reset" id="resetFilters">Limpar Filtros</button>
+                    </div>
+                    
+                    <!-- Filtro por Categoria/Programa -->
+                    <div class="filter-group">
+                        <label class="filter-label">Programa/Categoria:</label>
+                        <div class="filter-buttons" id="categoryFilters">
+                            <button class="filter-btn active" data-filter="all" data-type="category">Todos</button>
+                            <button class="filter-btn" data-filter="acordes-da-vida" data-type="category">Acordes da Vida</button>
+                            <button class="filter-btn" data-filter="escola-allan-kardec" data-type="category">Escola Allan Kardec</button>
+                            <button class="filter-btn" data-filter="geral" data-type="category">Geral</button>
+                            <button class="filter-btn" data-filter="notícias" data-type="category">Notícias</button>
+                            <button class="filter-btn" data-filter="parcerias" data-type="category">Parcerias</button>
+                            <button class="filter-btn" data-filter="sem-categoria" data-type="category">Sem categoria</button>
+                            <button class="filter-btn" data-filter="slider" data-type="category">Slider</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Filtro por Data -->
+                    <div class="filter-group">
+                        <label class="filter-label">Ano:</label>
+                        <div class="filter-buttons" id="dateFilters">
+                            <button class="filter-btn active" data-filter="all" data-type="date">Todos</button>
+                            <button class="filter-btn" data-filter="2025" data-type="date">2025</button>
+                            <button class="filter-btn" data-filter="2024" data-type="date">2024</button>
+                            <button class="filter-btn" data-filter="2023" data-type="date">2023</button>
+                            <button class="filter-btn" data-filter="2022" data-type="date">2022</button>
+                            <button class="filter-btn" data-filter="2021" data-type="date">2021</button>
+                            <button class="filter-btn" data-filter="2020" data-type="date">2020</button>
+                            <button class="filter-btn" data-filter="2019" data-type="date">2019</button>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-results">
+                        <span id="filterResultsText">Mostrando todos os posts</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lista de Posts por Categoria -->
+        <section class="news-section">
+            <div class="container">
+                <article class="content-post">
+                    <div class="post-content">
+                        <div class="posts-list posts-list-4cols">
+            
+            <section class="category-section">
+                <h2 class="category-title">
+                    <a href="posts/categorias/notícias/index.html">Notícias</a>
+                    <span class="post-count">(30 posts)</span>
+                </h2>
+            
+                <article class="post-item">
+                    <div class="post-item-content">
+                        <div class="post-image-wrapper">
+                            <img src="hero-poster.jpg" alt="Desafio" class="post-image" />
+                        </div>
+                        <div class="post-text-content">
+                            <h3><a href="posts/todos/desafio.html">Desafio</a></h3>
+                            <p class="post-meta">
+                                Publicado em 2020-10-28 por jeronimo.candinho
+                                 | <span class="category-tag">Notícias</span>
+                            </p>
+                            <div class="post-excerpt"><img class="aligncenter size-full wp-image-2134" src="/wordpress/wp-content/uploads/2020/10/IMG-20201028-WA0004.jpg" alt="" width="1080" height="1080"...</div>
+                            <a href="posts/todos/desafio.html" class="read-more">Ler mais →</a>
+                        </div>
+                    </div>
+                </article>
+                
+                </section>
+            <section class="category-section">
+                <h2 class="category-title">
+                    <a href="posts/categorias/parcerias/index.html">Parcerias</a>
+                    <span class="post-count">(4 posts)</span>
+                </h2>
+            
+                <article class="post-item">
+                    <div class="post-item-content">
+                        <div class="post-image-wrapper">
+                            <img src="hero-poster.jpg" alt="Você pode fazer o Natal de famílias de Sobradinho mais feliz" class="post-image" />
+                        </div>
+                        <div class="post-text-content">
+                            <h3><a href="posts/todos/voce-pode-fazer-o-natal-de-familias-de-sobradinho-mais-feliz-2.html">Você pode fazer o Natal de famílias de Sobradinho mais feliz</a></h3>
+                            <p class="post-meta">
+                                Publicado em 2019-12-16 por jeronimo.candinho
+                                 | <span class="category-tag">Parcerias</span>
+                            </p>
+                            <div class="post-excerpt"><!-- wp:heading {"level":3} -->
+<h3><em>Obras sociais Jerônimo Candinho querem a sua ajuda para um natal mais feliz</em></h3>
+<!-- /wp:heading -->
+
+<!...</div>
+                            <a href="posts/todos/voce-pode-fazer-o-natal-de-familias-de-sobradinho-mais-feliz-2.html" class="read-more">Ler mais →</a>
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="post-item">
+                    <div class="post-item-content">
+                        <div class="post-image-wrapper">
+                            <img src="hero-poster.jpg" alt="Projeto Sociomusical Serenata de Natal faz bela apresentação em Sobradinho" class="post-image" />
+                        </div>
+                        <div class="post-text-content">
+                            <h3><a href="posts/todos/projeto-sociomusical-serenata-de-natal-faz-bela-apresentacao-em-sobradinho.html">Projeto Sociomusical Serenata de Natal faz bela apresentação em Sobradinho</a></h3>
+                            <p class="post-meta">
+                                Publicado em 2019-12-16 por jeronimo.candinho
+                                 | <span class="category-tag">Parcerias</span>
+                            </p>
+                            <div class="post-excerpt"><!-- wp:paragraph -->
+<p>Chega o Natal, e com ele o Espírito de Solidariedade se intensifica. E no sábado, dia 23, as Obras Sociais Jerônimo Candinho ...</div>
+                            <a href="posts/todos/projeto-sociomusical-serenata-de-natal-faz-bela-apresentacao-em-sobradinho.html" class="read-more">Ler mais →</a>
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="post-item">
+                    <div class="post-item-content">
+                        <div class="post-image-wrapper">
+                            <img src="hero-poster.jpg" alt="Oficina Burguer e Jerônimo Candinho juntos por quem mais precisa" class="post-image" />
+                        </div>
+                        <div class="post-text-content">
+                            <h3><a href="posts/todos/oficina-burguer-e-jeronimo-candinho-juntos-por-quem-mais-precisa-2.html">Oficina Burguer e Jerônimo Candinho juntos por quem mais precisa</a></h3>
+                            <p class="post-meta">
+                                Publicado em 2019-12-16 por jeronimo.candinho
+                                 | <span class="category-tag">Parcerias</span>
+                            </p>
+                            <div class="post-excerpt"><!-- wp:paragraph -->
+<p>Fazer o bem faz bem demais! O pessoal da Oficina Burguer nos fez um convite muito especial: participar de um evento todo volt...</div>
+                            <a href="posts/todos/oficina-burguer-e-jeronimo-candinho-juntos-por-quem-mais-precisa-2.html" class="read-more">Ler mais →</a>
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="post-item">
+                    <div class="post-item-content">
+                        <div class="post-image-wrapper">
+                            <img src="hero-poster.jpg" alt="Crianças de Sobradinho são beneficiadas pelo projeto BRB Solidário" class="post-image" />
+                        </div>
+                        <div class="post-text-content">
+                            <h3><a href="posts/todos/brb-solidario-2019.html">Crianças de Sobradinho são beneficiadas pelo projeto BRB Solidário</a></h3>
+                            <p class="post-meta">
+                                Publicado em 2019-11-01 por jeronimo.candinho
+                                 | <span class="category-tag">Parcerias</span>
+                            </p>
+                            <div class="post-excerpt"><!-- wp:paragraph -->
+<p>No mês de outubro é celebrado o Dia das Crianças. Essa fase na qual acredita-se tanto no poder da imaginação e na capacidade ...</div>
+                            <a href="posts/todos/brb-solidario-2019.html" class="read-more">Ler mais →</a>
+                        </div>
+                    </div>
+                </article>
+                </section>
+            <section class="category-section">
+                <h2 class="category-title">
+                    <a href="posts/categorias/notícias/index.html">Notícias</a>
+                    <span class="post-count">(30 posts)</span>
+                </h2>
+            
+                <article class="post-item">
+                    <div class="post-item-content">
+                        <div class="post-image-wrapper">
+                            <img src="hero-poster.jpg" alt="Inscrições abertas para curso EAD de formação digital" class="post-image" />
+                        </div>
+                        <div class="post-text-content">
+                            <h3><a href="posts/todos/inscricoes-abertas-para-curso-ead-de-formacao-digital.html">Inscrições abertas para curso EAD de formação digital</a></h3>
+                            <p class="post-meta">
+                                Publicado em 2020-08-22 por jeronimo.candinho
+                                 | <span class="category-tag">Notícias</span>
+                            </p>
+                            <div class="post-excerpt">As Obras Sociais Jerônimo Candinho abrem inscrições para Curso EAD de formação digital em tecnologia para docentes e facilitadores. Inscreva-se no lin...</div>
+                            <a href="posts/todos/inscricoes-abertas-para-curso-ead-de-formacao-digital.html" class="read-more">Ler mais →</a>
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="post-item">
+                    <div class="post-item-content">
+                        <div class="post-image-wrapper">
+                            <img src="hero-poster.jpg" alt="Mesa Brasil e Jerônimo Candinho realizam mais de mil atendimentos" class="post-image" />
+                        </div>
+                        <div class="post-text-content">
+                            <h3><a href="posts/todos/mesa-brasil-e-jeronimo-candinho-realizam-mais-de-mil-atendimentos.html">Mesa Brasil e Jerônimo Candinho realizam mais de mil atendimentos</a></h3>
+                            <p class="post-meta">
+                                Publicado em 2020-08-17 por jeronimo.candinho
+                                 | <span class="category-tag">Notícias</span>
+                            </p>
+                            <div class="post-excerpt"><p style="text-align: left;"><img class="alignleft wp-image-2114 size-medium" src="/wordpress/wp-content/uploads/2020/08/IMG-20200810-WA00182-225x300....</div>
+                            <a href="posts/todos/mesa-brasil-e-jeronimo-candinho-realizam-mais-de-mil-atendimentos.html" class="read-more">Ler mais →</a>
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="post-item">
+                    <div class="post-item-content">
+                        <div class="post-image-wrapper">
+                            <img src="hero-poster.jpg" alt="Agradecimentos" class="post-image" />
+                        </div>
+                        <div class="post-text-content">
+                            <h3><a href="posts/todos/agradecimentos.html">Agradecimentos</a></h3>
+                            <p class="post-meta">
+                                Publicado em 2020-06-02 por jeronimo.candinho
+                                 | <span class="category-tag">Notícias</span>
+                            </p>
+                            <div class="post-excerpt">Nossos agradecimentos à FUNDAÇÃO BANCO DO BRASIL e ao INSTITUTO COOPERFORTE que proporcionaram a doação de 115 cestas básicas, beneficiando mais de 50...</div>
+                            <a href="posts/todos/agradecimentos.html" class="read-more">Ler mais →</a>
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="post-item">
+                    <div class="post-item-content">
+                        <div class="post-image-wrapper">
+                            <img src="hero-poster.jpg" alt="Agradecimento a empresas parceiras" class="post-image" />
+                        </div>
+                        <div class="post-text-content">
+                            <h3><a href="posts/todos/agradecimento-a-empresas-parceiras.html">Agradecimento a empresas parceiras</a></h3>
+                            <p class="post-meta">
+                                Publicado em 2020-05-14 por jeronimo.candinho
+                                 | <span class="category-tag">Notícias</span>
+                            </p>
+                            <div class="post-excerpt">Registramos, por meio de imagens, nosso agradecimentos às empresas que tem nos ajudado a doar alimentos e itens essenciais a tantas famílias em meio a...</div>
+                            <a href="posts/todos/agradecimento-a-empresas-parceiras.html" class="read-more">Ler mais →</a>
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="post-item">
+                    <div class="post-item-content">
+                        <div class="post-image-wrapper">
+                            <img src="hero-poster.jpg" alt="Doação de Máscaras" class="post-image" />
+                        </div>
+                        <div class="post-text-content">
+                            <h3><a href="posts/todos/doacao-de-mascaras.html">Doação de Máscaras</a></h3>
+                            <p class="post-meta">
+                                Publicado em 2020-05-13 por jeronimo.candinho
+                                 | <span class="category-tag">Notícias</span>
+                            </p>
+                            <div class="post-excerpt">Gestantes e idosos têm recebido também máscaras caseiras, produzidas carinhosamente pela voluntária Leinyr Barbosa, 85 anos, moradora de Planaltina.
+
+...</div>
+                            <a href="posts/todos/doacao-de-mascaras.html" class="read-more">Ler mais →</a>
+                        </div>
+                    </div>
+                </article>
+                </section>
+            <section class="category-section">
+                <h2 class="category-title">
+                    <a href="posts/categorias/sem-categoria/index.html">Sem Categoria</a>
+                    <span class="post-count">(7 posts)</span>
+                </h2>
+            
+                <article class="post-item">
+                    <div class="post-item-content">
+                        <div class="post-image-wrapper">
+                            <img src="hero-poster.jpg" alt="Aulão de Yoga" class="post-image" />
+                        </div>
+                        <div class="post-text-content">
+                            <h3><a href="posts/todos/aulaodeyoga.html">Aulão de Yoga</a></h3>
+                            <p class="post-meta">
+                                Publicado em 2024-10-29 por Marcelosjc
+                                 | <span class="category-tag">Sem categoria</span>
+                            </p>
+                            <div class="post-excerpt"><!-- wp:paragraph -->
+<p>Aulão de Yoga nas Obras Sociais Jerônimo Candinho 💚</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Que tal cuidar do co...</div>
+                            <a href="posts/todos/aulaodeyoga.html" class="read-more">Ler mais →</a>
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="post-item">
+                    <div class="post-item-content">
+                        <div class="post-image-wrapper">
+                            <img src="hero-poster.jpg" alt="Evento Outubro Rosa  Inscrições abertas" class="post-image" />
+                        </div>
+                        <div class="post-text-content">
+                            <h3><a href="posts/todos/outubro-rosa.html">Evento Outubro Rosa  Inscrições abertas</a></h3>
+                            <p class="post-meta">
+                                Publicado em 2024-10-07 por Marcelosjc
+                                 | <span class="category-tag">Sem categoria</span>
+                            </p>
+                            <div class="post-excerpt"><!-- wp:paragraph -->
+<p></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p></p>
+<!-- /wp:par...</div>
+                            <a href="posts/todos/outubro-rosa.html" class="read-more">Ler mais →</a>
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="post-item">
+                    <div class="post-item-content">
+                        <div class="post-image-wrapper">
+                            <img src="hero-poster.jpg" alt="Excursão Pedagógica" class="post-image" />
+                        </div>
+                        <div class="post-text-content">
+                            <h3><a href="posts/todos/excursao-pedagogica.html">Excursão Pedagógica</a></h3>
+                            <p class="post-meta">
+                                Publicado em 2024-09-10 por Marcelosjc
+                                 | <span class="category-tag">Sem categoria</span>
+                            </p>
+                            <div class="post-excerpt"><!-- wp:paragraph -->
+<p>O Colégio Allan Kardec e o Programa Jovem Candango participaram de uma incrível excursão pedagógica para o desfile do Dia do ...</div>
+                            <a href="posts/todos/excursao-pedagogica.html" class="read-more">Ler mais →</a>
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="post-item">
+                    <div class="post-item-content">
+                        <div class="post-image-wrapper">
+                            <img src="hero-poster.jpg" alt="Jornada de Saúde mental" class="post-image" />
+                        </div>
+                        <div class="post-text-content">
+                            <h3><a href="posts/todos/jornada-de-saude-mental.html">Jornada de Saúde mental</a></h3>
+                            <p class="post-meta">
+                                Publicado em 2024-09-10 por Marcelosjc
+                                 | <span class="category-tag">Sem categoria</span>
+                            </p>
+                            <div class="post-excerpt"><!-- wp:paragraph -->
+<p>Dia 21/08/2024, as Obras Sociais Jerônimo Candinho realizou uma palestra sobre Saúde Mental.</p>
+<!-- /wp:paragraph -->
+
+<!--...</div>
+                            <a href="posts/todos/jornada-de-saude-mental.html" class="read-more">Ler mais →</a>
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="post-item">
+                    <div class="post-item-content">
+                        <div class="post-image-wrapper">
+                            <img src="hero-poster.jpg" alt="Momento Cívico" class="post-image" />
+                        </div>
+                        <div class="post-text-content">
+                            <h3><a href="posts/todos/momento-civico.html">Momento Cívico</a></h3>
+                            <p class="post-meta">
+                                Publicado em 2024-09-10 por Marcelosjc
+                                 | <span class="category-tag">Sem categoria</span>
+                            </p>
+                            <div class="post-excerpt"><!-- wp:paragraph -->
+<p>Momento cívico com a banda do Exército Brasileiro. 💚</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Dia 09/09/2024, nas...</div>
+                            <a href="posts/todos/momento-civico.html" class="read-more">Ler mais →</a>
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="post-item">
+                    <div class="post-item-content">
+                        <div class="post-image-wrapper">
+                            <img src="hero-poster.jpg" alt="Programa JOVEM CANDANGO 01/2023" class="post-image" />
+                        </div>
+                        <div class="post-text-content">
+                            <h3><a href="posts/todos/selecionados-para-o-programa-jovem-candango-2023-2.html">Programa JOVEM CANDANGO 01/2023</a></h3>
+                            <p class="post-meta">
+                                Publicado em 2023-07-01 por jeronimo.candinho
+                                 | <span class="category-tag">Sem categoria</span>
+                            </p>
+                            <div class="post-excerpt"><strong>Está aberto o edital de chamada pública – Processo Seletivo Simplificado do Programa Jovem Candango 01/2023</strong>
+
+Numa parceria com a Secr...</div>
+                            <a href="posts/todos/selecionados-para-o-programa-jovem-candango-2023-2.html" class="read-more">Ler mais →</a>
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="post-item">
+                    <div class="post-item-content">
+                        <div class="post-image-wrapper">
+                            <img src="hero-poster.jpg" alt="Escola Digital Jerônimo Candinho" class="post-image" />
+                        </div>
+                        <div class="post-text-content">
+                            <h3><a href="posts/todos/escola-digital-jeronimo-candinho.html">Escola Digital Jerônimo Candinho</a></h3>
+                            <p class="post-meta">
+                                Publicado em 2022-09-30 por jeronimo.candinho
+                                 | <span class="category-tag">Sem categoria</span>, <span class="category-tag">slider</span>
+                            </p>
+                            <div class="post-excerpt"><h2>Cursos EAD</h2>				
+															<img width="1024" height="131" src="/wordpress/wp-content/uploads/2022/09/Banner-para-site-sobre-atendimento-e-...</div>
+                            <a href="posts/todos/escola-digital-jeronimo-candinho.html" class="read-more">Ler mais →</a>
+                        </div>
+                    </div>
+                </article>
+                </section>
+            <!-- Navegação de Páginas -->
+            <div class="posts-pagination">
+                <a href="posts-2.html" class="program-link">← Página Anterior</a>
+            </div>
+        </div>
+                </article>
+            </div>
+        </section>
+    </main>
+    
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2025 Obras Sociais do Centro Espírita Fraternidade Jerônimo Candinho. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+    
+    <script src="js/main.js"></script>
+</body>
+</html>
+
+
