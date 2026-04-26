@@ -1,0 +1,20 @@
+/*
+Theme Name: OSJC Theme
+Theme URI: https://osjc.org.br/
+Author: Gabriel
+Author URI: https://gabriel.com/
+Description: Tema customizado para as Obras Sociais do Centro Espírita Fraternidade Jerônimo Candinho. Mantém 100% do layout original HTML.
+Version: 1.0.0
+Requires at least: 5.0
+Tested up to: 6.4
+Requires PHP: 7.4
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: osjc
+Tags: custom-background, custom-header, custom-logo, post-thumbnails, accessibility-ready, translation-ready, wide-blocks, custom-colors, custom-menu, editor-style, featured-images, flexible-header, footer-widgets, sticky-post, theme-options, threaded-comments
+*/
+
+/*
+ * Este arquivo serve apenas como identificação do tema.
+ * Os estilos principais estão em assets/css/style.css
+ */

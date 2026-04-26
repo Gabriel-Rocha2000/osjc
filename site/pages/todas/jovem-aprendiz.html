@@ -3,128 +3,134 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jovem Aprendiz - Obras Sociais do Centro Espírita Fraternidade Jerônimo Candinho</title>
+    <title>Inscrição Jovem Aprendiz 2025 - Obras Sociais do Centro Espírita Fraternidade Jerônimo Candinho</title>
     <link rel="stylesheet" href="../../css/style.css">
-    <style>
-        .jovem-aprendiz-images {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: var(--spacing-xl);
-            max-width: 1200px;
-            margin: var(--spacing-xl) auto;
-            padding: 0 var(--spacing-lg);
-        }
-
-        .jovem-aprendiz-item {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .jovem-aprendiz-image-wrapper {
-            position: relative;
-            width: 100%;
-            height: 400px;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            margin-bottom: var(--spacing-md);
-        }
-
-        .jovem-aprendiz-image-wrapper:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
-        }
-
-        .jovem-aprendiz-image-wrapper a {
-            display: block;
-            width: 100%;
-            height: 100%;
-            text-decoration: none;
-        }
-
-        .jovem-aprendiz-image-wrapper img {
-            width: 100%;
-            height: 100%;
-            display: block;
-            object-fit: cover;
-        }
-
-        .jovem-aprendiz-title {
-            text-align: center;
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: var(--green-dark);
-            margin: 0;
-            padding: var(--spacing-sm);
-            display: block;
-            visibility: visible;
-        }
-
-        @media (max-width: 768px) {
-            .jovem-aprendiz-images {
-                grid-template-columns: 1fr;
-                gap: var(--spacing-lg);
-                padding: 0 var(--spacing-md);
-            }
-            
-            .jovem-aprendiz-image-wrapper {
-                height: 300px;
-            }
-        }
-    </style>
 </head>
 <body>
-    <header class="site-header" id="siteHeader">
+    <!-- Elementos decorativos verdes -->
+    <div class="decorative-green-right"></div>
+    <div class="decorative-green-bottom"></div>
+
+    <!-- Botão hambúrguer para abrir drawer (mobile) -->
+    <button class="drawer-toggle" id="drawerToggle" aria-label="Abrir menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+
+        <header class="site-header" id="siteHeader">
         <div class="container">
-            <div class="header-left">
-                <div class="logo-circle">
-                    <img src="../../LOGO-JERONIMO-NEW-1-90x90.png" alt="Logo Jerônimo Candinho" />
+            <div class="header-top">
+                <div class="header-left">
+                    <div class="logo-circle">
+                        <img src="../../LOGO-JERONIMO-NEW-1-90x90.png" alt="Logo Jerônimo Candinho" />
+                    </div>
+                    <h1 class="site-title"><a href="../../index.html">Obras Sociais C.E.F. Jerônimo Candinho</a></h1>
                 </div>
-                <h1 class="site-title"><a href="../../index.html">Obras Sociais do Centro Espírita Fraternidade Jerônimo Candinho</a></h1>
             </div>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="../../index.html">Início</a></li>
-                    <li><a href="../../quem-somos.html">Quem somos</a></li>
-                    <li><a href="../../posts.html">O que fazemos</a></li>
-                    <li><a href="../../pages.html">Compliance</a></li>
-                    <li><a href="../../pages.html">Contato</a></li>
-                    <li><a href="../../posts.html">Blog</a></li>
-                </ul>
-            </nav>
-            <div class="header-right">
-                <a href="../../doe-aqui.html" class="donate-button">Doe Aqui</a>
+            <div class="header-bottom">
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="../../index.html" class="nav-link">Home</a></li>
+                        <li><a href="../../quem-somos.html" class="nav-link">Quem Somos</a></li>
+                        <li><a href="../../posts.html" class="nav-link">Programas</a></li>
+                        <li><a href="../../pages.html" class="nav-link">Vagas</a></li>
+                        <li><a href="../../posts.html" class="nav-link">Blog</a></li>
+                        <li><a href="../../pages/todas/transparencia.html" class="nav-link">Transparência</a></li>
+                        <li><a href="../../pages.html" class="nav-link">Materiais</a></li>
+                        <li><a href="../../pages/todas/contato.html" class="nav-link">Contato</a></li>
+                    </ul>
+                </nav>
+                <div class="header-actions">
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/jeronimocandinho.osjc?igsh=NHlmb3NxN2p0ODh1" target="_blank" rel="noopener" aria-label="Instagram" class="social-icon">
+                            <img src="../../assets/instagram-icon.svg" alt="Instagram" class="social-icon-img" />
+                        </a>
+                        <a href="https://www.facebook.com" target="_blank" rel="noopener" aria-label="Facebook" class="social-icon">
+                            <img src="../../assets/facebook-icon.svg" alt="Facebook" class="social-icon-img" />
+                        </a>
+                        <a href="https://www.youtube.com/@obrassociaisjeronimocandinho" target="_blank" rel="noopener" aria-label="YouTube" class="social-icon">
+                            <img src="../../youtube-123.svg" alt="YouTube" class="social-icon-img" />
+                        </a>
+                    </div>
+                    <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema">
+                        <span class="theme-icon">🌙</span>
+                    </button>
+                    <a href="../../doe-aqui.html" class="donate-button"><img src="../../heart-icon.png" alt="Coração" class="donate-heart-icon"> Doe aqui</a>
+                </div>
             </div>
         </div>
     </header>
     
-    <main class="main-content">
+    <main class="main-content jovem-aprendiz-page">
         <div class="container">
             <article class="content-post">
-                <h1 class="post-title">Jovem Aprendiz</h1>
+                <h1 class="post-title">Inscrição Jovem Aprendiz 2025</h1>
                 <div class="post-content">
-                    <div class="jovem-aprendiz-images">
-                        <!-- Imagem 1 - Jovem -->
-                        <div class="jovem-aprendiz-item">
-                            <div class="jovem-aprendiz-image-wrapper">
-                                <a href="https://aprendizjeronimocandinho.org.br/" target="_blank">
-                                    <img src="../../assets/aprendiz.png" alt="Jovem Aprendiz" />
-                                </a>
-                            </div>
-                            <h2 class="jovem-aprendiz-title">Sou jovem e busco uma vaga</h2>
+                    <section class="ja-intro">
+                        <p><a href="portal-jovem-aprendiz.html">← Voltar ao portal</a> · <a href="vagas-jovem-aprendiz.html">Informações sobre vagas e o programa</a></p>
+                        <p>Preencha o formulário abaixo para participar da seleção do Programa Jovem Aprendiz 2025.</p>
+                    </section>
+
+                    <section class="ja-stats">
+                        <article class="ja-stat-card">
+                            <h3>Jovens atendidos em 2025</h3>
+                            <p class="ja-stat-value">0</p>
+                        </article>
+                        <article class="ja-stat-card">
+                            <h3>Jovens atendidos no total</h3>
+                            <p class="ja-stat-value">0</p>
+                        </article>
+                    </section>
+
+                    <section class="ja-banners">
+                        <img src="/wordpress/wp-content/uploads/elementor/thumbs/osjc-1080-×-2800-px-1080-×-3800-px-1080-×-4800-px-3080-×-4800-px-3880-×-4800-px-4800-×-4800-px-5-×-5-cm-46-q9w6zooovwomsfj51y5g6gv5br0j1h9x0dl2dkc8e0.png" alt="Campanha Jovem Aprendiz 1" loading="lazy" />
+                        <img src="/wordpress/wp-content/uploads/elementor/thumbs/osjc-1080-×-2800-px-1080-×-3800-px-1080-×-4800-px-3080-×-4800-px-3880-×-4800-px-4800-×-4800-px-5-×-5-cm-48-q9wa1y53devshh8esf55ndue24ok56q7qsgw07hq2w.png" alt="Campanha Jovem Aprendiz 2" loading="lazy" />
+                    </section>
+
+                    <section class="ja-form-wrapper">
+                        <h2>Formulário de Inscrição</h2>
+                        <form class="ja-form" action="https://app.mailingboss.com/lists/649480ab7fc5d/subscribe" method="post">
+                            <div class="ja-field"><label for="NOME">Seu nome completo</label><input required placeholder="Seu nome completo" name="NOME" type="text" id="NOME"></div>
+                            <div class="ja-field"><label for="EMAIL">E-mail</label><input required placeholder="E-mail" name="EMAIL" type="email" id="EMAIL"></div>
+                            <div class="ja-field"><label for="NASCIMENTO">Data de nascimento</label><input required placeholder="Data de nascimento" name="NASCIMENTO" type="text" id="NASCIMENTO"></div>
+                            <div class="ja-field"><label for="CELULAR">Qual seu celular?</label><input required placeholder="Qual seu celular?" name="CELULAR" type="text" id="CELULAR"></div>
+                            <div class="ja-field"><label for="CELULAR2">Celular do responsável</label><input required placeholder="Celular do responsável" name="CELULAR2" type="text" id="CELULAR2"></div>
+                            <div class="ja-field"><label for="TELEFONE">Telefone fixo</label><input placeholder="Telefone fixo" name="TELEFONE" type="text" id="TELEFONE"></div>
+                            <div class="ja-field"><label for="RG">Seu RG</label><input required placeholder="Seu RG" name="RG" type="text" id="RG"></div>
+                            <div class="ja-field"><label for="CPF">Seu CPF</label><input required placeholder="Seu CPF" name="CPF" type="text" id="CPF"></div>
+                            <div class="ja-field"><label for="CIDADE">Qual cidade você reside?</label><input required placeholder="Qual cidade você reside?" name="CIDADE" type="text" id="CIDADE"></div>
+                            <div class="ja-field"><label for="RENDA">Qual o valor da renda da sua casa (total)</label><input required placeholder="Qual o valor da renda da sua casa (total)" name="RENDA" type="text" id="RENDA"></div>
+                            <div class="ja-field"><label for="CARTEIRADETRABALHO">Número da sua carteira de trabalho</label><input required placeholder="Número da sua carteira de trabalho" name="CARTEIRADETRABALHO" type="text" id="CARTEIRADETRABALHO"></div>
+                            <div class="ja-field"><label for="NPESSOAS">Quantas pessoas moram na sua casa?</label><input required placeholder="Quantas pessoas moram na sua casa?" name="NPESSOAS" type="text" id="NPESSOAS"></div>
+                            <div class="ja-field"><label for="SERIE">Em qual série você está atualmente?</label><input required placeholder="Em qual série você está atualmente?" name="SERIE" type="text" id="SERIE"></div>
+                            <div class="ja-field"><label for="TURNO">Em qual turno você estuda?</label><input required placeholder="Em qual turno você estuda?" name="TURNO" type="text" id="TURNO"></div>
+                            <div class="ja-field ja-field-full"><label for="JOVEMAPRENDIZ">Já foi Jovem Aprendiz?</label><input placeholder="Já foi Jovem Aprendiz?" name="JOVEMAPRENDIZ" type="text" id="JOVEMAPRENDIZ"></div>
+                            <div class="ja-actions"><input type="submit" value="Inscrever"></div>
+                        </form>
+                    </section>
+
+                    <section class="ja-partners">
+                        <h2>Parceiros</h2>
+                        <div class="ja-partners-grid">
+                            <figure><img src="/wordpress/wp-content/uploads/2023/08/logo-aabbb-1-1536x1171.png" alt="Logo parceiro AABBB" /></figure>
+                            <figure><img src="/wordpress/wp-content/uploads/2023/08/logomarca-country-club.png" alt="Logo parceiro Country Club" /></figure>
+                            <figure><img src="/wordpress/wp-content/uploads/2023/08/logo-df.png" alt="Logo parceiro DF" /></figure>
+                            <figure><img src="/wordpress/wp-content/uploads/2023/08/Logo-PNG-3.png" alt="Logo parceiro 3" /></figure>
+                            <figure><img src="/wordpress/wp-content/uploads/2023/08/download-7.jpeg" alt="Logo parceiro 4" /></figure>
+                            <figure><img src="/wordpress/wp-content/uploads/2023/08/logo-casa-iracema-300px.png" alt="Logo parceiro Casa Iracema" /></figure>
+                            <figure><img src="/wordpress/wp-content/uploads/2023/08/logo_rccdf_site.png" alt="Logo parceiro RCCDF" /></figure>
+                            <figure><img src="/wordpress/wp-content/uploads/2023/08/logo-look.png" alt="Logo parceiro Look" /></figure>
+                            <figure><img src="/wordpress/wp-content/uploads/2023/08/APB_LOGO-removebg-preview.png" alt="Logo parceiro APB" /></figure>
+                            <figure><img src="/wordpress/wp-content/uploads/2023/08/xU1Xb04TSZ2uiNii09AN_ti3BfKs25sJfOM3j.jpeg" alt="Logo parceiro 5" /></figure>
+                            <figure><img src="/wordpress/wp-content/uploads/2023/08/sicoob_06_04_2023.jpeg" alt="Logo parceiro Sicoob" /></figure>
+                            <figure><img src="/wordpress/wp-content/uploads/2023/08/1663170083018.jpeg" alt="Logo parceiro 6" /></figure>
+                            <figure><img src="/wordpress/wp-content/uploads/2023/08/business_logo.png" alt="Logo parceiro Business" /></figure>
+                            <figure><img src="/wordpress/wp-content/uploads/2023/08/Logo-CBV-Hospital-de-Olhos-2022.jpg-1.webp" alt="Logo parceiro CBV" /></figure>
+                            <figure><img src="/wordpress/wp-content/uploads/2023/08/logo-volvo-suecia_-2.png" alt="Logo parceiro Volvo Suecia" /></figure>
                         </div>
-                        
-                        <!-- Imagem 2 - Empresa -->
-                        <div class="jovem-aprendiz-item">
-                            <div class="jovem-aprendiz-image-wrapper">
-                                <a href="https://aprendizjeronimocandinho.org.br/" target="_blank">
-                                    <img src="../../assets/empresaa.jpg" alt="Sou empresa e quero contratar" />
-                                </a>
-                            </div>
-                            <h2 class="jovem-aprendiz-title">Sou empresa e quero contratar</h2>
-                        </div>
-                    </div>
+                    </section>
                 </div>
             </article>
         </div>

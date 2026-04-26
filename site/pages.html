@@ -7,26 +7,58 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header class="site-header">
+    <!-- Elementos decorativos verdes -->
+    <div class="decorative-green-right"></div>
+    <div class="decorative-green-bottom"></div>
+
+    <!-- Botão hambúrguer para abrir drawer (mobile) -->
+    <button class="drawer-toggle" id="drawerToggle" aria-label="Abrir menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+
+        <header class="site-header" id="siteHeader">
         <div class="container">
-            <div class="header-left">
-                <div class="logo-circle">
-                    <img src="LOGO-JERONIMO-NEW-1-90x90.png" alt="Logo Jerônimo Candinho" />
+            <div class="header-top">
+                <div class="header-left">
+                    <div class="logo-circle">
+                        <img src="LOGO-JERONIMO-NEW-1-90x90.png" alt="Logo Jerônimo Candinho" />
+                    </div>
+                    <h1 class="site-title"><a href="index.html">Obras Sociais C.E.F. Jerônimo Candinho</a></h1>
                 </div>
-                
             </div>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="index.html">Início</a></li>
-                    <li><a href="quem-somos.html">Quem somos</a></li>
-                    <li><a href="posts.html">O que fazemos</a></li>
-                    <li><a href="pages.html">Compliance</a></li>
-                    <li><a href="pages/todas/contato.html">Contato</a></li>
-                    <li><a href="posts.html">Blog</a></li>
-                </ul>
-            </nav>
-            <div class="header-right">
-                <a href="doe-aqui.html" class="donate-button">Doe Aqui</a>
+            <div class="header-bottom">
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="index.html" class="nav-link">Home</a></li>
+                        <li><a href="quem-somos.html" class="nav-link">Quem Somos</a></li>
+                        <li><a href="posts.html" class="nav-link">Programas</a></li>
+                        <li><a href="pages.html" class="nav-link">Vagas</a></li>
+                        <li><a href="posts.html" class="nav-link">Blog</a></li>
+                        <li><a href="pages/todas/transparencia.html" class="nav-link">Transparência</a></li>
+                        <li><a href="pages.html" class="nav-link">Materiais</a></li>
+                        <li><a href="pages/todas/contato.html" class="nav-link">Contato</a></li>
+                    </ul>
+                </nav>
+                <div class="header-actions">
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/jeronimocandinho.osjc?igsh=NHlmb3NxN2p0ODh1" target="_blank" rel="noopener" aria-label="Instagram" class="social-icon">
+                            <img src="./assets/instagram-icon.svg" alt="Instagram" class="social-icon-img" />
+                        </a>
+                        <a href="https://www.facebook.com" target="_blank" rel="noopener" aria-label="Facebook" class="social-icon">
+                            <img src="./assets/facebook-icon.svg" alt="Facebook" class="social-icon-img" />
+                        </a>
+                        <a href="https://www.youtube.com/@obrassociaisjeronimocandinho" target="_blank" rel="noopener" aria-label="YouTube" class="social-icon">
+                            <img src="./youtube-123.svg" alt="YouTube" class="social-icon-img" />
+                        </a>
+                    </div>
+                    <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema">
+                        <span class="theme-icon">🌙</span>
+                    </button>
+                    <a href="doe-aqui.html" class="donate-button"><img src="./heart-icon.png" alt="Coração" class="donate-heart-icon"> Doe aqui</a>
+                </div>
             </div>
         </div>
     </header>
@@ -36,10 +68,25 @@
             <article class="content-post">
                 <h1 class="post-title">Páginas</h1>
                 <div class="post-content">
+
+        <section id="vagas" class="vagas-hub" style="margin-bottom: 2.5rem; padding: 1.25rem 1.5rem; background: #f8fbf4; border: 1px solid #dbe8cd; border-radius: 14px;">
+            <h2 style="margin-top: 0;">Vagas e inscrições</h2>
+            <p style="color: #445248; margin-bottom: 1rem;">Principais canais para matrículas, seleções e formulários:</p>
+            <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.65rem;">
+                <li><a href="pages/todas/colegio-allan-kardec-matriculas-abertas.html" class="read-more">Colégio Allan Kardec – matrículas</a></li>
+                <li><a href="pages/todas/portal-jovem-aprendiz.html" class="read-more">Programa Jovem Aprendiz – portal (jovem ou empresa)</a></li>
+                <li><a href="pages/todas/vagas-jovem-candango.html" class="read-more">Programa Jovem Candango – vagas e editais</a></li>
+            </ul>
+        </section>
                     
         <h1>Todas as Páginas</h1>
         <div class="pages-list">
             
+            <article class="page-item" id="goodwill-bazar">
+                <h2><a href="pages/todas/goodwill-bazar.html">GOODWILL - BAZAR</a></h2>
+                <a href="pages/todas/goodwill-bazar.html" class="read-more">Ver página →</a>
+            </article>
+
             <article class="page-item">
                 <h2><a href="pages/todas/a-instituicao.html">A instituição</a></h2>
                 <a href="pages/todas/a-instituicao.html" class="read-more">Ver página →</a>
@@ -196,11 +243,6 @@
             </article>
             
             <article class="page-item">
-                <h2><a href="pages/todas/goodwill-bazar.html">GOODWILL - BAZAR</a></h2>
-                <a href="pages/todas/goodwill-bazar.html" class="read-more">Ver página →</a>
-            </article>
-            
-            <article class="page-item">
                 <h2><a href="pages/todas/gallery.html">Gallery</a></h2>
                 <a href="pages/todas/gallery.html" class="read-more">Ver página →</a>
             </article>
@@ -306,6 +348,11 @@
             </article>
             
             <article class="page-item">
+                <h2><a href="pages/todas/portal-jovem-aprendiz.html">Portal Jovem Aprendiz (jovem ou empresa)</a></h2>
+                <a href="pages/todas/portal-jovem-aprendiz.html" class="read-more">Ver página →</a>
+            </article>
+            
+            <article class="page-item">
                 <h2><a href="pages/todas/elementor-2842.html">Programa Jovem Aprendiz 2023</a></h2>
                 <a href="pages/todas/elementor-2842.html" class="read-more">Ver página →</a>
             </article>
@@ -343,6 +390,16 @@
             <article class="page-item">
                 <h2><a href="pages/todas/transparencia.html">Transparência</a></h2>
                 <a href="pages/todas/transparencia.html" class="read-more">Ver página →</a>
+            </article>
+            
+            <article class="page-item">
+                <h2><a href="pages/todas/vagas-jovem-aprendiz.html">Vagas – Programa Jovem Aprendiz</a></h2>
+                <a href="pages/todas/vagas-jovem-aprendiz.html" class="read-more">Ver página →</a>
+            </article>
+            
+            <article class="page-item">
+                <h2><a href="pages/todas/vagas-jovem-candango.html">Vagas – Programa Jovem Candango</a></h2>
+                <a href="pages/todas/vagas-jovem-candango.html" class="read-more">Ver página →</a>
             </article>
             
             <article class="page-item">

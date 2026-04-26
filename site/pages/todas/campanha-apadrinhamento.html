@@ -3,11 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Amigo que Transforma - Um gesto de amor que muda o presente e constrói o futuro de uma criança. Faça parte dessa transformação apadrinhando uma criança.">
-    <title>Amigo que Transforma - Obras Sociais do Centro Espírita Fraternidade Jerônimo Candinho</title>
+    <meta name="description" content="Campanha Apadrinhamento - Faça parte dessa transformação. Apadrinhe uma criança ou adolescente e faça a diferença na vida de quem precisa.">
+    <title>Campanha Apadrinhamento - Obras Sociais do Centro Espírita Fraternidade Jerônimo Candinho</title>
     <link rel="stylesheet" href="../../css/style.css">
 </head>
 <body>
+    <!-- Elementos decorativos verdes -->
+    <div class="decorative-green-right"></div>
+    <div class="decorative-green-bottom"></div>
+
+    <!-- Botão hambúrguer para abrir drawer (mobile) -->
+    <button class="drawer-toggle" id="drawerToggle" aria-label="Abrir menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+
     <header class="site-header" id="siteHeader">
         <div class="container">
             <div class="header-top">
@@ -27,6 +39,7 @@
                         <li><a href="../../pages.html" class="nav-link">Vagas</a></li>
                         <li><a href="../../posts.html" class="nav-link">Blog</a></li>
                         <li><a href="transparencia.html" class="nav-link">Transparência</a></li>
+                        <li><a href="../../pages.html" class="nav-link">Materiais</a></li>
                         <li><a href="contato.html" class="nav-link">Contato</a></li>
                     </ul>
                 </nav>
@@ -38,7 +51,7 @@
                         <a href="https://www.facebook.com" target="_blank" rel="noopener" aria-label="Facebook" class="social-icon">
                             <img src="../../assets/facebook-icon.svg" alt="Facebook" class="social-icon-img" />
                         </a>
-                        <a href="https://www.youtube.com" target="_blank" rel="noopener" aria-label="YouTube" class="social-icon">
+                        <a href="https://www.youtube.com/@obrassociaisjeronimocandinho" target="_blank" rel="noopener" aria-label="YouTube" class="social-icon">
                             <img src="../../youtube-123.svg" alt="YouTube" class="social-icon-img" />
                         </a>
                     </div>
@@ -57,88 +70,41 @@
             <div class="container">
                 <div class="section-header">
                     <span class="section-tag">Campanha</span>
-                    <h1>Amigo que Transforma</h1>
-                    <p class="program-subtitle">Um gesto de amor que muda o presente e constrói o futuro de uma criança</p>
+                    <h1>Campanha Apadrinhamento</h1>
                 </div>
                 
-                <!-- Imagem da Campanha -->
-                <div class="apadrinhamento-image-wrapper">
-                    <img src="../../assets/amigo1.jpeg" alt="Amigo que Transforma - Ajude as crianças do nosso Colégio Allan Kardec" class="apadrinhamento-banner-image" />
+                <!-- Carrossel de Imagens -->
+                <div class="apadrinhamento-carousel-wrapper">
+                    <div class="program-carousel" data-carousel="apadrinhamento-page">
+                        <div class="program-carousel-track">
+                            <div class="program-carousel-slide active">
+                                <img src="../../FORTALECER E APRENDER.JPG" alt="Campanha Apadrinhamento - Transformando vidas" class="apadrinhamento-carousel-image" />
+                            </div>
+                            <div class="program-carousel-slide">
+                                <img src="../../JOVEM CANDANGO.JPG" alt="Campanha Apadrinhamento - Fazendo a diferença" class="apadrinhamento-carousel-image" />
+                            </div>
+                            <div class="program-carousel-slide">
+                                <img src="../../JOVEM APRENDIZ.JPG" alt="Campanha Apadrinhamento - Construindo futuro" class="apadrinhamento-carousel-image" />
+                            </div>
+                        </div>
+                        <button class="program-carousel-prev" aria-label="Imagem anterior">‹</button>
+                        <button class="program-carousel-next" aria-label="Próxima imagem">›</button>
+                        <div class="program-carousel-dots">
+                            <button class="program-carousel-dot active" aria-label="Imagem 1"></button>
+                            <button class="program-carousel-dot" aria-label="Imagem 2"></button>
+                            <button class="program-carousel-dot" aria-label="Imagem 3"></button>
+                        </div>
+                    </div>
                 </div>
                 
                 <!-- Conteúdo de Texto -->
                 <div class="apadrinhamento-content">
                     <div class="apadrinhamento-text">
-                        <p>Ser um <strong>Amigo que Transforma</strong> é mais do que ajudar: é criar laços, oferecer dignidade e garantir que crianças em situação de vulnerabilidade tenham acesso ao que precisam para aprender, crescer e sonhar.</p>
+                        <p class="apadrinhamento-intro">No mundo, cerca de <strong>17 milhões de crianças</strong> crescem em ambientes familiares desprotegidos, sem acesso a serviços essenciais como saúde e educação, além de viverem diariamente sob risco de violação de seus direitos.</p>
                         
-                        <div class="apadrinhamento-section">
-                            <h4>🌱 Sobre a campanha</h4>
-                            <p>A campanha <strong>Amigo que Transforma</strong> é uma iniciativa das Obras Sociais Jerônimo Candinho que convida pessoas e empresas a apadrinharem crianças atendidas pela nossa escola gratuita, contribuindo com uniformes e materiais escolares.</p>
-                            <p>Com o seu apoio, promovemos:</p>
-                            <ul class="apadrinhamento-benefits">
-                                <li>Inclusão social</li>
-                                <li>Aprendizagem com dignidade</li>
-                                <li>Fortalecimento da autoestima</li>
-                                <li>Alívio financeiro para as famílias</li>
-                            </ul>
-                            <p>Cada contribuição gera impacto real e imediato na vida de uma criança.</p>
-                        </div>
-
-                        <div class="apadrinhamento-section">
-                            <h4>🎯 Nosso objetivo</h4>
-                            <p>Garantir melhores condições de aprendizagem, conforto e equidade para crianças de 3 a 12 anos, fortalecendo o desenvolvimento educacional, emocional e social, por meio do apadrinhamento solidário e do engajamento da comunidade.</p>
-                        </div>
-
-                        <div class="apadrinhamento-section">
-                            <h4>👧👦 Quem são os beneficiados?</h4>
-                            <p>Crianças atendidas pela escola gratuita mantida pelas Obras Sociais Jerônimo Candinho, que vivem em situação de vulnerabilidade social e dependem do apoio da comunidade para ter acesso a itens básicos como uniforme e material pedagógico.</p>
-                        </div>
-
-                        <div class="apadrinhamento-section">
-                            <h4>Como você pode transformar uma vida?</h4>
-                            <p>Você pode participar da campanha de duas formas:</p>
-                            
-                            <div class="apadrinhamento-options">
-                                <div class="apadrinhamento-option">
-                                    <h5>💛 Apadrinhamento Completo</h5>
-                                    <ul>
-                                        <li>✔ Uniforme (camiseta e calça)</li>
-                                        <li>✔ Material escolar e pedagógico</li>
-                                        <li><strong>💰 Valor sugerido: R$ 368,00</strong></li>
-                                    </ul>
-                                </div>
-                                <div class="apadrinhamento-option">
-                                    <h5>💛 Apadrinhamento Parcial</h5>
-                                    <ul>
-                                        <li>✔ Apenas uniforme <strong>💰 R$ 98,00</strong></li>
-                                        <li>✔ Apenas material escolar <strong>💰 R$ 270,00</strong></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <p>Cada contribuição é fundamental e transforma realidades.</p>
-                        </div>
-
-                        <div class="apadrinhamento-section">
-                            <h4>🤝 O que você recebe ao apadrinhar?</h4>
-                            <ul class="apadrinhamento-benefits">
-                                <li>✔ Certificado digital de Amigo que Transforma</li>
-                                <li>✔ Prestação de contas transparente</li>
-                                <li>✔ Relatórios com fotos e resultados (com autorização)</li>
-                                <li>✔ A certeza de estar impactando positivamente o futuro de uma criança</li>
-                            </ul>
-                        </div>
-
-                        <div class="apadrinhamento-section">
-                            <h4>📊 Transparência e compromisso</h4>
-                            <p>Prezamos pela ética, responsabilidade e transparência.</p>
-                            <p>Após a campanha, divulgaremos:</p>
-                            <ul class="apadrinhamento-benefits">
-                                <li>Relatório financeiro</li>
-                                <li>Lista de crianças beneficiadas (apenas nomes, sem dados sensíveis)</li>
-                                <li>Registros da entrega dos kits</li>
-                                <li>Depoimentos das famílias e alunos</li>
-                            </ul>
-                        </div>
+                        <p>Apadrinhar é assumir um compromisso de amor e cuidado. É escolher fazer a diferença na vida de uma criança ou adolescente que precisa de apoio, atenção e oportunidades. Ao longo do apadrinhamento, nasce um vínculo profundo, e o padrinho muitas vezes se torna uma referência de afeto, proteção e amizade para toda a vida.</p>
+                        
+                        <p class="apadrinhamento-cta"><strong>Faça parte dessa transformação. Apadrinhe.</strong></p>
                     </div>
                     
                     <!-- Call to Action -->
@@ -157,7 +123,7 @@
                 <div class="footer-section footer-about">
                     <h4>Obras Sociais do Centro Espírita Fraternidade Jerônimo Candinho</h4>
                     <p>Fundada por um grupo de voluntários em 04/05/1984. Tem sua sede no Jardim Nova Esperança e extensão no Jardim Liberdade – Goiânia-GO.</p>
-                    <p class="footer-cnpj"><strong>CNPJ:</strong> 25.006.149/0001-09</p>
+                    <p class="footer-cnpj"><strong>CNPJ:</strong> 01635028000168</p>
                 </div>
                 <div class="footer-section">
                     <h4>Navegação</h4>
@@ -178,7 +144,7 @@
                         <li><a href="../../posts.html">Florescer</a></li>
                         <li><a href="../../posts.html">Educandário Espírita</a></li>
                         <li><a href="../../posts.html">Jovem Aprendiz</a></li>
-                        <li><a href="campanha-apadrinhamento.html">Amigo que Transforma</a></li>
+                        <li><a href="campanha-apadrinhamento.html">Campanha Apadrinhamento</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
@@ -194,7 +160,7 @@
                         </div>
                         <div class="contact-item">
                             <span class="contact-icon">✉️</span>
-                            <span>contato@osceia.org.br</span>
+                            <span>contato@jeronimocandinho.org</span>
                         </div>
                         <div class="contact-item">
                             <span class="contact-icon">⏰</span>
@@ -211,7 +177,7 @@
                         <a href="https://www.facebook.com" target="_blank" rel="noopener" aria-label="Facebook" class="footer-social-link">
                             <span class="social-icon-text">Facebook</span>
                         </a>
-                        <a href="https://www.youtube.com" target="_blank" rel="noopener" aria-label="YouTube" class="footer-social-link">
+                        <a href="https://www.youtube.com/@obrassociaisjeronimocandinho" target="_blank" rel="noopener" aria-label="YouTube" class="footer-social-link">
                             <span class="social-icon-text">YouTube</span>
                         </a>
                         <a href="https://wa.me/5561981691123" target="_blank" rel="noopener" aria-label="WhatsApp" class="footer-social-link">

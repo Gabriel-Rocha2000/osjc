@@ -205,11 +205,35 @@ document.addEventListener('DOMContentLoaded', function() {
     // Adiciona espaço para imagem em todos os post-items
     initPostItemImages();
     
-    // Remove category-title do DOM para não interferir no grid
-    fixPostsGridLayout();
-    
     // Site carregado com sucesso
 });
+
+/**
+ * Prefixo até a raiz do site (pasta onde estão index.html, pages.html, posts.html).
+ * Calculado a partir de location.pathname para funcionar em qualquer profundidade
+ * (evita pages/todas/pages/todas/... quando o link "Home" não é o primeiro match).
+ */
+function getSiteRootRelativePrefix() {
+    let path = window.location.pathname || '';
+    path = path.replace(/\/[^/]*\.html?$/i, '').replace(/\/$/, '');
+    const parts = path.split('/').filter(Boolean);
+    if (parts.length === 0) return '';
+    const siteIdx = parts.indexOf('site');
+    let depth = 0;
+    if (siteIdx !== -1) {
+        depth = parts.length - siteIdx - 1;
+    } else {
+        depth = parts.length;
+    }
+    return '../'.repeat(Math.max(0, depth));
+}
+
+function resolveDrawerHref(rel) {
+    if (!rel || rel.startsWith('#') || rel.startsWith('http://') || rel.startsWith('https://') || rel.startsWith('mailto:')) {
+        return rel;
+    }
+    return getSiteRootRelativePrefix() + rel;
+}
 
 // Função para inicializar drawers do menu
 function initNavDrawers() {
@@ -219,7 +243,7 @@ function initNavDrawers() {
             links: [
                 { text: 'História', href: 'quem-somos.html' },
                 { text: 'Missão, Visão e Valores', href: 'pages/todas/missao-visao-e-valor.html' },
-                { text: 'Sobre nós', href: 'pages/todas/quem-somos.html' },
+                { text: 'Sobre nós', href: 'pages.html' },
                 { text: 'Quem é quem', href: 'pages/todas/quem-e-quem.html' }
             ]
         },
@@ -231,9 +255,9 @@ function initNavDrawers() {
         },
         'Vagas': {
             links: [
-                { text: 'Vagas no Colégio Allan Kardec', href: 'pages.html' },
-                { text: 'Programas Jovem Aprendiz', href: 'posts.html' },
-                { text: 'Jovem Candango', href: 'posts.html' }
+                { text: 'Vagas no Colégio Allan Kardec', href: 'pages/todas/colegio-allan-kardec-matriculas-abertas.html' },
+                { text: 'Vagas – Programa Jovem Aprendiz', href: 'pages/todas/portal-jovem-aprendiz.html' },
+                { text: 'Vagas – Programa Jovem Candango', href: 'pages/todas/vagas-jovem-candango.html' }
             ]
         }
     };
@@ -269,7 +293,8 @@ function initNavDrawers() {
                     // Cria o conteúdo do drawer
                     let linksHTML = '';
                     hasDrawer.links.forEach(linkItem => {
-                        linksHTML += `<a href="${linkItem.href}" class="nav-drawer-link">${linkItem.text}</a>`;
+                        const url = resolveDrawerHref(linkItem.href);
+                        linksHTML += `<a href="${url}" class="nav-drawer-link">${linkItem.text}</a>`;
                     });
                     
                     drawer.innerHTML = `
@@ -477,7 +502,7 @@ function initHeroCarousel(carouselId) {
     function startAutoplay() {
         autoplayInterval = setInterval(() => {
             nextSlide();
-        }, 5000); // Muda a cada 5 segundos
+        }, 6000); // Muda a cada 6 segundos
     }
     
     function resetAutoplay() {
@@ -813,7 +838,7 @@ function initProgramCarousel(carouselElement) {
     function startAutoplay() {
         autoplayInterval = setInterval(() => {
             nextSlide();
-        }, 5000); // Muda a cada 5 segundos
+        }, 6000); // Muda a cada 6 segundos
     }
     
     function resetAutoplay() {
@@ -833,76 +858,3 @@ function initProgramCarousel(carouselElement) {
     // Inicia autoplay
     startAutoplay();
 }
-
-// Função para corrigir layout do grid removendo category-title
-function fixPostsGridLayout() {
-    const postsList4Cols = document.querySelector('.posts-list-4cols');
-    if (!postsList4Cols) return;
-    
-    // Guarda o botão de paginação e o container pai
-    const pagination = postsList4Cols.querySelector('.posts-pagination');
-    const parentContainer = postsList4Cols.parentNode;
-    
-    // Remove temporariamente o botão do DOM
-    if (pagination && pagination.parentNode) {
-        pagination.parentNode.removeChild(pagination);
-    }
-    
-    // Coleta TODOS os posts ANTES de remover as seções (para garantir que nenhum seja perdido)
-    const allPosts = Array.from(postsList4Cols.querySelectorAll('.post-item'));
-    
-    // Remove todas as seções de categoria
-    const categorySections = postsList4Cols.querySelectorAll('.category-section');
-    categorySections.forEach(section => {
-        if (section.parentNode) {
-            section.parentNode.removeChild(section);
-        }
-    });
-    
-    // Limpa o container do grid de qualquer elemento que não seja post
-    const allChildren = Array.from(postsList4Cols.children);
-    allChildren.forEach(child => {
-        if (!child.classList.contains('post-item')) {
-            if (child.parentNode) {
-                child.parentNode.removeChild(child);
-            }
-        }
-    });
-    
-    // Move todos os posts diretamente para o container do grid
-    allPosts.forEach(post => {
-        // Remove o post do seu local atual
-        if (post.parentNode && post.parentNode !== postsList4Cols) {
-            post.parentNode.removeChild(post);
-        }
-        // Adiciona no grid
-        postsList4Cols.appendChild(post);
-    });
-    
-    // Adiciona o botão de paginação FORA do grid, após o container do grid
-    if (pagination && parentContainer) {
-        parentContainer.appendChild(pagination);
-    }
-    
-    // Debug: verifica se todos os 16 posts estão no grid
-    const finalPosts = postsList4Cols.querySelectorAll('.post-item');
-    console.log('Posts no grid:', finalPosts.length);
-}
-
-// Tornar cards de posts clicáveis
-document.addEventListener('DOMContentLoaded', function() {
-    document.querySelectorAll('.post-item').forEach(postItem => {
-        const link = postItem.querySelector('.post-text-content h3 a, .read-more');
-        if (link) {
-            const postUrl = link.getAttribute('href');
-            postItem.style.cursor = 'pointer';
-            postItem.addEventListener('click', function(e) {
-                // Não redirecionar se clicar diretamente em um link
-                if (e.target.tagName === 'A' || e.target.closest('a')) {
-                    return;
-                }
-                window.location.href = postUrl;
-            });
-        }
-    });
-});

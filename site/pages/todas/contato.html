@@ -7,6 +7,18 @@
     <link rel="stylesheet" href="../../css/style.css">
 </head>
 <body>
+    <!-- Elementos decorativos verdes -->
+    <div class="decorative-green-right"></div>
+    <div class="decorative-green-bottom"></div>
+
+    <!-- Botão hambúrguer para abrir drawer (mobile) -->
+    <button class="drawer-toggle" id="drawerToggle" aria-label="Abrir menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+
     <header class="site-header" id="siteHeader">
         <div class="container">
             <div class="header-top">
@@ -26,6 +38,7 @@
                         <li><a href="../../pages.html" class="nav-link">Vagas</a></li>
                         <li><a href="../../posts.html" class="nav-link">Blog</a></li>
                         <li><a href="transparencia.html" class="nav-link">Transparência</a></li>
+                        <li><a href="../../pages.html" class="nav-link">Materiais</a></li>
                         <li><a href="contato.html" class="nav-link">Contato</a></li>
                     </ul>
                 </nav>
@@ -37,7 +50,7 @@
                         <a href="https://www.facebook.com" target="_blank" rel="noopener" aria-label="Facebook" class="social-icon">
                             <img src="../../assets/facebook-icon.svg" alt="Facebook" class="social-icon-img" />
                         </a>
-                        <a href="https://youtube.com" target="_blank" rel="noopener" aria-label="YouTube" class="social-icon">
+                        <a href="https://www.youtube.com/@obrassociaisjeronimocandinho" target="_blank" rel="noopener" aria-label="YouTube" class="social-icon">
                             <img src="../../youtube-123.svg" alt="YouTube" class="social-icon-img" />
                         </a>
                     </div>
@@ -85,7 +98,7 @@
                         <h3>E-mail</h3>
                         <div class="contact-details">
                             <p><strong>Geral:</strong></p>
-                            <p><a href="mailto:contato@osjc.org.br">contato@oscjc.org</a></p>
+                            <p><a href="mailto:contato@jeronimocandinho.org">contato@jeronimocandinho.org</a></p>
                             <p style="margin-top: var(--spacing-sm);"><strong>Diretoria:</strong></p>
                             <p><a href="mailto:diretoria@jeronimocandinho.org">diretoria@jeronimocandinho.org</a></p>
                         </div>
@@ -122,12 +135,12 @@
                                     <img src="../../assets/facebook-icon.svg" alt="Facebook" class="contact-social-icon" />
                                     <span>Facebook</span>
                                 </a>
-                                <a href="https://www.youtube.com" target="_blank" rel="noopener" class="contact-social-link">
+                                <a href="https://www.youtube.com/@obrassociaisjeronimocandinho" target="_blank" rel="noopener" class="contact-social-link">
                                     <img src="../../youtube-123.svg" alt="YouTube" class="contact-social-icon" />
                                     <span>YouTube</span>
                                 </a>
                                 <a href="https://wa.me/5561981691123" target="_blank" rel="noopener" class="contact-social-link">
-                                    <img src="../../assets/whatsapp-icon.svg" alt="WhatsApp" class="contact-social-icon" />
+                                    <img src="../../assets/whatsapp-icon.png" alt="WhatsApp" class="contact-social-icon" />
                                     <span>WhatsApp</span>
                                 </a>
                             </div>
@@ -226,11 +239,11 @@
                         </div>
                         <div class="bank-info-item">
                             <span class="bank-label">CNPJ:</span>
-                            <span class="bank-value">25.006.149/0001-09</span>
+                            <span class="bank-value">01635028000168</span>
                         </div>
                         <div class="bank-info-item bank-info-full">
                             <span class="bank-label">PIX (Chave):</span>
-                            <span class="bank-value bank-value-pix">25.006.149/0001-09</span>
+                            <span class="bank-value bank-value-pix">01635028000168</span>
                             <button class="btn-copy-pix" onclick="copyPixKey()" aria-label="Copiar chave PIX">
                                 <span>📋</span> Copiar
                             </button>
@@ -263,7 +276,7 @@
                 <div class="footer-section footer-about">
                     <h4>Obras Sociais do Centro Espírita Fraternidade Jerônimo Candinho</h4>
                     <p>Fundada por um grupo de voluntários em 04/05/1984. Tem sua sede no Jardim Nova Esperança e extensão no Jardim Liberdade – Goiânia-GO.</p>
-                    <p class="footer-cnpj"><strong>CNPJ:</strong> 25.006.149/0001-09</p>
+                    <p class="footer-cnpj"><strong>CNPJ:</strong> 01635028000168</p>
                 </div>
                 <div class="footer-section">
                     <h4>Navegação</h4>
@@ -300,7 +313,7 @@
                         </div>
                         <div class="contact-item">
                             <span class="contact-icon">✉️</span>
-                            <span>contato@osceia.org.br</span>
+                            <span>contato@jeronimocandinho.org</span>
                         </div>
                         <div class="contact-item">
                             <span class="contact-icon">⏰</span>
@@ -317,7 +330,7 @@
                         <a href="https://www.facebook.com" target="_blank" rel="noopener" aria-label="Facebook" class="footer-social-link">
                             <span class="social-icon-text">Facebook</span>
                         </a>
-                        <a href="https://www.youtube.com" target="_blank" rel="noopener" aria-label="YouTube" class="footer-social-link">
+                        <a href="https://www.youtube.com/@obrassociaisjeronimocandinho" target="_blank" rel="noopener" aria-label="YouTube" class="footer-social-link">
                             <span class="social-icon-text">YouTube</span>
                         </a>
                         <a href="https://wa.me/5561981691123" target="_blank" rel="noopener" aria-label="WhatsApp" class="footer-social-link">
@@ -335,7 +348,7 @@
     <script src="../../js/main.js"></script>
     <script>
         function copyPixKey() {
-            const pixKey = '25.006.149/0001-09';
+            const pixKey = '01635028000168';
             navigator.clipboard.writeText(pixKey).then(function() {
                 const btn = document.querySelector('.btn-copy-pix');
                 const originalText = btn.innerHTML;
