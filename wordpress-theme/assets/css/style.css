@@ -3171,13 +3171,13 @@ body.dark-mode .recent-posts-cta-content p {
     width: auto;
     height: auto;
     object-fit: contain;
-    filter: grayscale(100%);
-    opacity: 0.7;
+    filter: none;
+    opacity: 1;
     transition: var(--transition-smooth);
 }
 
 .partner-item:hover .partner-image {
-    filter: grayscale(0%);
+    filter: none;
     opacity: 1;
     transform: scale(1.05);
 }
