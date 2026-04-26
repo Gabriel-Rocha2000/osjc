@@ -218,9 +218,9 @@ function initNavDrawers() {
         'Quem Somos': {
             links: [
                 { text: 'História', href: 'quem-somos.html' },
-                { text: 'Missão, Visão e Valores', href: '#missao-visao-valores' },
-                { text: 'Sobre nós', href: 'pages.html' },
-                { text: 'Quem é quem', href: 'pages.html' }
+                { text: 'Missão, Visão e Valores', href: 'pages/todas/missao-visao-e-valor.html' },
+                { text: 'Sobre nós', href: 'pages/todas/quem-somos.html' },
+                { text: 'Quem é quem', href: 'pages/todas/quem-e-quem.html' }
             ]
         },
         'Programas': {
